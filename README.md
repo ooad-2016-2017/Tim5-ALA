@@ -29,3 +29,14 @@ validira i ukoliko postoji sala u tom terminu koja ispunjava uvjete raspored se 
 zahtijev administratoru za odobrenje. 
 
 ## Funkcionalnosti
+
+- mogućnost unosa sala i podataka o njima 
+- mogućnost kreiranja grupa 
+- rezervisanje sala za zaseban termin ili u sklopu sedmičnog rasporeda
+- pregled rasporeda po: salama, grupama, predmetima, predavačima
+- obavještavanje o promjenama u salama (kvarovi i sl.)
+
+## Akteri
+
+- Administrator: unosi i ažurira sale i kreira korisničke račune za predavače
+- Korisnik (profesor/tutor): rezerviše sale i kreira grupe
