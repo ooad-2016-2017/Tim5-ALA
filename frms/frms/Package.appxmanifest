@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="fc150221-714d-4668-8257-aeeb9f9fef5d"
+    Name="e610e7f3-cb34-4d7e-80c9-8b5a94fa1ce3"
     Publisher="CN=Adnan"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="fc150221-714d-4668-8257-aeeb9f9fef5d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="e610e7f3-cb34-4d7e-80c9-8b5a94fa1ce3" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>eDnevnik</DisplayName>
+    <DisplayName>frms</DisplayName>
     <PublisherDisplayName>Adnan</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="eDnevnik.App">
+      EntryPoint="frms.App">
       <uap:VisualElements
-        DisplayName="eDnevnik"
+        DisplayName="frms"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="eDnevnik"
+        Description="frms"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
