@@ -1,21 +1,30 @@
-1 - SRP
+﻿1 - SRP
 
-U slučaju jednostavnijih klasa (poput Administrator, Profesor, Tutor, Sala itd.), očigledno je primijenjen ovaj princip. Svaka od njih obavlja određenu ulogu koja, čak i kad bi se promijenilo nešto u specifikacijama, ne bi utjecala na rad ostalih klasa. Što se tiče složenijih (Fakultet, Grupa...), svaka od funkcija koje obavlja se odnosi na jednostavnije klase, tako da vrijedi isto što i za njih.  
+U slučaju jednostavnijih klasa (poput Administrator, Profesor, Tutor, Sala itd.), očigledno je primijenjen ovaj 
+princip. Svaka od njih obavlja određenu ulogu koja, čak i kad bi se promijenilo nešto u specifikacijama, ne bi 
+utjecala na rad ostalih klasa. Što se tiče složenijih (Fakultet, Grupa...), svaka od funkcija koje obavlja se 
+odnosi na jednostavnije klase, tako da vrijedi isto što i za njih.  
 
 2 - OCP
 
-Model sadrži klase koje su odgovorne isključivo za komunikacije van sistema (baza, eksterni uređaj i sl.), kao što je ZahtjevRezervacija. Tako da nijedna klasa ne sadrži metode koje bi mogle obavljati te funkcije; samim time zadovoljen je i ovaj princip.
+Model sadrži klase koje su odgovorne isključivo za komunikacije van sistema (baza, eksterni uređaj i sl.), 
+kao što je ZahtjevRezervacija. Tako da nijedna klasa ne sadrži metode koje bi mogle obavljati te 
+funkcije; samim time zadovoljen je i ovaj princip.
 
 3 - LSP
 
-Podtipovi u našem slučaju jesu zamjenjivi osnovnim tipovima, jer se po samoj implementaciji veoma malo razlikuju, te imaju svrhu samo da razlikuju akcije koje su u mogućnosti obaviti u sklopu sistema. Ovo se odnosi na uloge (korisnike). Ostale klase se ne nasljeđuju.
+Podtipovi u našem slučaju jesu zamjenjivi osnovnim tipovima, jer se po samoj implementaciji veoma malo 
+razlikuju, te imaju svrhu samo da razlikuju akcije koje su u mogućnosti obaviti u sklopu sistema. Ovo se 
+odnosi na uloge (korisnike). Ostale klase se ne nasljeđuju.
 
 4 - ISP
 
-Kao što je spomenuto pri razmatranju prethodnog principa, model ne sadrži mnogo nasljeđivanja. Za one klase koje predstavljaju bazne se, u skladu sa ovim principom, ne očekuju velike izmjene.
+Kao što je spomenuto pri razmatranju prethodnog principa, model ne sadrži mnogo nasljeđivanja. Za one klase 
+koje predstavljaju bazne se, u skladu sa ovim principom, ne očekuju velike izmjene.
 
 5 - DIP
 
-I ovaj princip je zadovoljen, jer nema mnogo "beskorisnih" atributa/metoda u klasama. Osim eventualno obaveznih getera i setera, što već zavisi od načina korištenja aplikacije. (All classes are beautiful)
+I ovaj princip je zadovoljen, jer nema mnogo "beskorisnih" atributa/metoda u klasama. Osim eventualno 
+obaveznih getera i setera, što već zavisi od načina korištenja aplikacije. (All classes are beautiful)
 
 Sve u svemu, može se reći da imamo SOLIDan model klasa.
