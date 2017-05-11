@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace frms.Models
 {
-    class ZahtjevRezervacija
+    class ZahtjevRezervacija : Zahtjev
     {
+        public Termin ZeljeniTermin { get; set; }
     }
 }

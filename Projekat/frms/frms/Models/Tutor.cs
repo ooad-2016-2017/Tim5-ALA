@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace frms.Models
 {
-    class Tutor
+    class Tutor : Korisnik
     {
     }
 }

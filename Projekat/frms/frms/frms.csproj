@@ -99,7 +99,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Administrator.cs" />
-    <Compile Include="Models\FakultetDataSource.cs" />
+    <Compile Include="DataAccessLayer\FakultetDataSource.cs" />
     <Compile Include="Models\Grupa.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\Laboratorij.cs" />
