@@ -26,5 +26,15 @@ namespace frms.Views
         {
             this.InitializeComponent();
         }
+
+        private void ClearScheduleButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ManageTasksButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

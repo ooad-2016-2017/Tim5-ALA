@@ -8,6 +8,24 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <StackPanel>
+            <!-- Dodati tabelu (responzivnu) sa rasporedom pod nazivom Schedule, CalendarView ispod služi kao placeholder -->
+            <CalendarView x:Name="Schedule"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="ClearScheduleButton"
+                        Margin="15"
+                        Width="150"
+                        Height="35"
+                        Content="Clear schedule"
+                        Click="ClearScheduleButton_Click"/>
+                <Button x:Name="ManageTasksButton"
+                        Margin="15"
+                        Width="150"
+                        Height="35"
+                        Content="Manage tasks"
+                        Click="ManageTasksButton_Click"/>
+            </StackPanel>
+            
+        </StackPanel>
     </Grid>
 </Page>

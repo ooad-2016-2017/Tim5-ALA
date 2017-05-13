@@ -26,6 +26,8 @@ namespace frms
         {
             this.InitializeComponent();
             aktivnaStranica.Navigate(typeof(Views.Login));
+            // treba disableati navigaciju dok se ne odradi login?
+            // ili samo da kontrole ništa ne prikazuju :)
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
