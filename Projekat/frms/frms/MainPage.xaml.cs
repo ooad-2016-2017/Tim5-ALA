@@ -26,5 +26,19 @@ namespace frms
         {
             this.InitializeComponent();
         }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainSplitView.IsPaneOpen)
+            {
+                MainSplitView.IsPaneOpen = false;
+                MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+            }
+            else
+            {
+                MainSplitView.IsPaneOpen = true;
+                MainSplitView.DisplayMode = SplitViewDisplayMode.Overlay;
+            }
+        }
     }
 }

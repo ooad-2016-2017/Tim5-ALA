@@ -8,6 +8,83 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView x:Name="MainSplitView"
+                   IsPaneOpen="False"
+                   CompactPaneLength="48"
+                   OpenPaneLength="200"
+                   DisplayMode="Overlay"
+                   PaneBackground="Gray">
+            <SplitView.Pane>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                Background="DimGray">
+                        <Button x:Name="HamburgerButton"
+                                FontFamily="Segoe MDL2 Assets"
+                                Content="&#xE700;"
+                                Width="50"
+                                Height="50"
+                                Background="Transparent"
+                                Click="HamburgerButton_Click"/>
+                        <TextBlock Text="Main Page"
+                                   FontSize="18"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <!-- Ovdje će se dodavati stranice iz Views foldera -->
+                    <Frame x:Name="aktivnaStranica"/>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
 
+        <!-- Visual state triggeri yo -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+
+                <!-- VisualState to be triggered when window width is >=1007 effective pixels -->
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1000" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!-- SplitView pane shows as overlay -->
+                        <!-- Splitview pane will close however :-( -->
+                        <Setter Target="MainSplitView.DisplayMode"
+                                Value="Inline" />
+                        <Setter Target="MainSplitView.IsPaneOpen"
+                                Value="True" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- VisualState to be triggered when window width is >=640 and <=1007 effective pixels -->
+                <VisualState x:Name="Tablet">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="641" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainSplitView.DisplayMode"
+                                Value="CompactOverlay" />
+                        <Setter Target="MainSplitView.IsPaneOpen"
+                                Value="False" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!-- VisualState to be triggered when window width is >=0 and <641 effective pixels -->
+                <VisualState x:Name="Phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!-- Collapse the SplitView pane into overlay mode -->
+                        <Setter Target="MainSplitView.DisplayMode"
+                                Value="Overlay" />
+                        <Setter Target="MainSplitView.IsPaneOpen"
+                                Value="False" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>
