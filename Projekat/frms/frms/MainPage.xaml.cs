@@ -25,6 +25,7 @@ namespace frms
         public MainPage()
         {
             this.InitializeComponent();
+            aktivnaStranica.Navigate(typeof(Views.Login));
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -39,6 +40,26 @@ namespace frms
                 MainSplitView.IsPaneOpen = true;
                 MainSplitView.DisplayMode = SplitViewDisplayMode.Overlay;
             }
+        }
+
+        private void UpdateScheduleButton_Click(object sender, RoutedEventArgs e)
+        {
+            aktivnaStranica.Navigate(typeof(Views.UpdateSchedule));
+        }
+
+        private void ManageGroupsButton_Click(object sender, RoutedEventArgs e)
+        {
+            aktivnaStranica.Navigate(typeof(Views.ManageGroups));
+        }
+
+        private void ReserveHallButton_Click(object sender, RoutedEventArgs e)
+        {
+            aktivnaStranica.Navigate(typeof(Views.ReserveHall));
+        }
+
+        private void SearchHallsButton_Click(object sender, RoutedEventArgs e)
+        {
+            aktivnaStranica.Navigate(typeof(Views.SearchHalls));
         }
     }
 }
