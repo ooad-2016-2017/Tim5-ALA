@@ -113,6 +113,8 @@
     <Compile Include="Models\Zahtjev.cs" />
     <Compile Include="Models\ZahtjevRezervacija.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\GrupaInputViewModel.cs" />
+    <Compile Include="ViewModels\KorisnikInputViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RasporedInputViewModel.cs" />
     <Compile Include="ViewModels\RezervacijaSaleViewModel.cs" />
