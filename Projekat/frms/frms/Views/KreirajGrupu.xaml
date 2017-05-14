@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="frms.Views.KreirajGrupu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:frms.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Left" Height="125" Margin="10,49,0,0" VerticalAlignment="Top" Width="340">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Naziv Grupe" Height="20" SelectionChanged="textBlock_SelectionChanged_1" Margin="10,0,0,0"/>
+            <TextBox x:Name="nazivGrupe" TextWrapping="Wrap" Text="" TextChanged="textBox_TextChanged" Margin="10,0"/>
+            <TextBlock x:Name="textBlock_Copy" TextWrapping="Wrap" Text="Predmet" Height="20" SelectionChanged="textBlock_SelectionChanged_1" Margin="10,0,0,0"/>
+            <TextBox x:Name="predmet" TextWrapping="Wrap" Text="" TextChanged="textBox_TextChanged" Margin="10,0"/>
+        </StackPanel>
+
+        <RelativePanel HorizontalAlignment="Left" Height="79" Margin="10,179,0,0" VerticalAlignment="Top" Width="340">
+            <TextBlock x:Name="brMjesta" HorizontalAlignment="Left" TextWrapping="Wrap" Width="124"   Margin="43,15,-167,-15">
+                <Run Text="Broj "/>
+                <Run Text="Studenata"/>
+                <Run Text=":"/>
+            </TextBlock>
+            <ComboBox x:Name="brojStudenata" HorizontalAlignment="Right" Height="32" VerticalAlignment="Top" Width="117" RelativePanel.RightOf="brMjesta" Margin="0,10,-289,-10"/>
+        </RelativePanel>
+        <RelativePanel HorizontalAlignment="Left" Height="246" Margin="10,258,0,0" VerticalAlignment="Top" Width="340">
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Width="146" SelectionChanged="textBlock1_SelectionChanged" Margin="0,0,-84.333,-1" Text="Rezervisi Salu"/>
+            <Button x:Name="pretraziSaleButton" Content="Pretrazi sale" HorizontalAlignment="Left" VerticalAlignment="Top" Click="button_Click" Width="120" Margin="206,204,-206,-198"/>
+            <TimePicker x:Name="pocetakTimePick" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="202" Margin="84,25,-38,-22"/>
+            <TimePicker x:Name="krajTimePick" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="242" Margin="84,59,-84,-59"/>
+            <ComboBox x:Name="daniCombo" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="116" Margin="143,100,-195,-100"/>
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Pocinje:" VerticalAlignment="Top" Width="62" Margin="10,38,-10.333,-38" RenderTransformOrigin="0.806,0.6"/>
+            <TextBlock x:Name="textBlock4" Height="20" TextWrapping="Wrap" Text="Zavrsava" VerticalAlignment="Top" Margin="10,71,-10.667,-71" HorizontalAlignment="Left" Width="62"/>
+            <TextBlock x:Name="textBlock5" Height="20" TextWrapping="Wrap" Text="Ponavljanje" VerticalAlignment="Top" Margin="10,142,-10.667,-142"/>
+            <TextBlock x:Name="textBlock6" Height="20" TextWrapping="Wrap" Text="Izaberi dan" VerticalAlignment="Top" Margin="10,105,-85,-105"/>
+            <ComboBox x:Name="ponavljanjeCombo" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="116" Margin="143,137,-195,-137"/>
+        </RelativePanel>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="553,557,-202,-97" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Button x:Name="odustanuButton" Content="Odustani" HorizontalAlignment="Left" Margin="57,557,0,0" VerticalAlignment="Top" Click="button_Click" Width="120"/>
+        <Button x:Name="sacuvajButton" Content="Sacuvaj" HorizontalAlignment="Left" Margin="182,557,0,0" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Page>

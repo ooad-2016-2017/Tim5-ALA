@@ -118,6 +118,15 @@
     <Compile Include="ViewModels\RezervacijaSaleViewModel.cs" />
     <Compile Include="ViewModels\SalaInputViewModel.cs" />
     <Compile Include="ViewModels\SalaPretragaViewModel.cs" />
+    <Compile Include="Views\DodajSalu.xaml.cs">
+      <DependentUpon>DodajSalu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DodajKorisnika.xaml.cs">
+      <DependentUpon>DodajKorisnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KreirajGrupu.xaml.cs">
+      <DependentUpon>KreirajGrupu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -133,6 +142,7 @@
     <Compile Include="Views\UpdateSchedule.xaml.cs">
       <DependentUpon>UpdateSchedule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\System\Object.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -156,6 +166,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DodajSalu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DodajKorisnika.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\KreirajGrupu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
