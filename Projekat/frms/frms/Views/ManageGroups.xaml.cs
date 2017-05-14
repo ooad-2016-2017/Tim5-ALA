@@ -25,6 +25,36 @@ namespace frms.Views
         public ManageGroups()
         {
             this.InitializeComponent();
+
+            // FOR DEBUGGING !!!
+            // TODO: kôd za dodavanje predmeta (u viewmodelu)
+
+            for (int i = 1; i < 5; ++i)
+            {
+                Predmeti.Items.Add("Predmet " + i.ToString());
+            }
+
+        }        
+
+        private void Predmeti_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // TODO: kôd za dodavanje grupa na predmetu (viewmodel)
+
+            rootPivot.Title = e.AddedItems[0];
+
+            for (int i = 1; i < 5; ++i)
+            {
+                TextBlock tb = new TextBlock();
+                tb.Text = "Grupa " + i.ToString();
+                PivotItem pa = new PivotItem();
+                pa.Content = tb;
+                rootPivot.Items.Add(pa);
+            }
+        }
+
+        private void CreateNewGroup_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

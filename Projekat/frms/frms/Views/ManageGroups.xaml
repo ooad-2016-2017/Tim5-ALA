@@ -8,6 +8,25 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <ComboBox x:Name="Predmeti"
+                          Width="150"
+                          Margin="15"
+                          Height="35"
+                          SelectionChanged="Predmeti_SelectionChanged"/>
+                <Button x:Name="CreateNewGroup"
+                        Margin="15"
+                        Width="150"
+                        Height="35"
+                        Content="Create group"
+                        Click="CreateNewGroup_Click"/>
+            </StackPanel>
+            <StackPanel>
+                <!-- Itemi se dinamički dodaju -->
+                <!-- Tabovi ne rade iz nekog razloga, treba popraviti -->
+                <Pivot x:Name="rootPivot"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
