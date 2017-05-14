@@ -7,7 +7,53 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <!-- i ovdje visual state triggere -->
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <StackPanel>
+                    <StackPanel Margin="10">
+                        <TextBlock Text="Termin:"
+                           Margin="5"/>
+                        <DatePicker x:Name="PretragaDatum"
+                            Margin="5"/>
+                        <TimePicker x:Name="PretragaVrijeme"
+                            Margin="5"/>
 
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Pretraži po terminu: "
+                               Margin="5"/>
+                            <ToggleSwitch x:Name="PretraziPoTerminu"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Broj mjesta:"
+                               Margin="5"/>
+                            <TextBox x:Name="PretragaBrojMjesta"
+                             Margin="5"
+                             Width="50"
+                             TextChanging="PretragaBrojMjesta_TextChanging"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Margin="10">
+                        <Button x:Name="ButtonPretraga"
+                        Margin="5"
+                        Width="150"
+                        Height="35"
+                        Content="Pretraga"
+                        Click="ButtonPretraga_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <!-- ovdje idu rezultati pretrage -->
+                <ListView x:Name="SaleRezultat"
+                          Margin="10"
+                          ItemClick="SaleRezultat_ItemClick"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
