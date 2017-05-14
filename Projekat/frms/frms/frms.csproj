@@ -137,6 +137,7 @@
     <Compile Include="Views\UpdateSchedule.xaml.cs">
       <DependentUpon>UpdateSchedule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\System\Object.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

@@ -20,16 +20,21 @@ namespace frms.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class DodajKorisnika : Page
     {
-        public Login()
+        public DodajKorisnika()
         {
             this.InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private void sacuvajButton_Click(object sender, RoutedEventArgs e)
         {
             // TODO
+        }
+
+        private void odustaniButton_Click(Windows.System.Object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
