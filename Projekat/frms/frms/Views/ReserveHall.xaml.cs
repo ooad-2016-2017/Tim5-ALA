@@ -25,6 +25,17 @@ namespace frms.Views
         public ReserveHall()
         {
             this.InitializeComponent();
+            DatumPocetka.Date = DateTime.Now;
+        }
+
+        private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonPretraga_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
