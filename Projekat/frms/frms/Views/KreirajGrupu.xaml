@@ -9,10 +9,10 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Left" Height="125" Margin="10,49,0,0" VerticalAlignment="Top" Width="340">
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Naziv Grupe" Height="20" SelectionChanged="textBlock_SelectionChanged_1" Margin="10,0,0,0"/>
-            <TextBox x:Name="nazivGrupe" TextWrapping="Wrap" Text="" TextChanged="textBox_TextChanged" Margin="10,0"/>
-            <TextBlock x:Name="textBlock_Copy" TextWrapping="Wrap" Text="Predmet" Height="20" SelectionChanged="textBlock_SelectionChanged_1" Margin="10,0,0,0"/>
-            <TextBox x:Name="predmet" TextWrapping="Wrap" Text="" TextChanged="textBox_TextChanged" Margin="10,0"/>
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Naziv Grupe" Height="20" Margin="10,0,0,0"/>
+            <TextBox x:Name="nazivGrupe" TextWrapping="Wrap" Text="" Margin="10,0"/>
+            <TextBlock x:Name="textBlock_Copy" TextWrapping="Wrap" Text="Predmet" Height="20" Margin="10,0,0,0"/>
+            <TextBox x:Name="predmet" TextWrapping="Wrap" Text="" Margin="10,0"/>
         </StackPanel>
 
         <RelativePanel HorizontalAlignment="Left" Height="79" Margin="10,179,0,0" VerticalAlignment="Top" Width="340">
@@ -24,8 +24,8 @@
             <ComboBox x:Name="brojStudenata" HorizontalAlignment="Right" Height="32" VerticalAlignment="Top" Width="117" RelativePanel.RightOf="brMjesta" Margin="0,10,-289,-10"/>
         </RelativePanel>
         <RelativePanel HorizontalAlignment="Left" Height="246" Margin="10,258,0,0" VerticalAlignment="Top" Width="340">
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Width="146" SelectionChanged="textBlock1_SelectionChanged" Margin="0,0,-84.333,-1" Text="Rezervisi Salu"/>
-            <Button x:Name="pretraziSaleButton" Content="Pretrazi sale" HorizontalAlignment="Left" VerticalAlignment="Top" Click="button_Click" Width="120" Margin="206,204,-206,-198"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Width="146" Margin="0,0,-84.333,-1" Text="Rezervisi Salu"/>
+            <Button x:Name="pretraziSaleButton" Content="Pretrazi sale" HorizontalAlignment="Left" VerticalAlignment="Top" Click="pretraziSaleButton_Click" Width="120" Margin="206,204,-206,-198"/>
             <TimePicker x:Name="pocetakTimePick" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="202" Margin="84,25,-38,-22"/>
             <TimePicker x:Name="krajTimePick" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="242" Margin="84,59,-84,-59"/>
             <ComboBox x:Name="daniCombo" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="116" Margin="143,100,-195,-100"/>
@@ -36,7 +36,7 @@
             <ComboBox x:Name="ponavljanjeCombo" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="116" Margin="143,137,-195,-137"/>
         </RelativePanel>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="553,557,-202,-97" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <Button x:Name="odustanuButton" Content="Odustani" HorizontalAlignment="Left" Margin="57,557,0,0" VerticalAlignment="Top" Click="button_Click" Width="120"/>
-        <Button x:Name="sacuvajButton" Content="Sacuvaj" HorizontalAlignment="Left" Margin="182,557,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="odustanuButton" Content="Odustani" HorizontalAlignment="Left" Margin="57,557,0,0" VerticalAlignment="Top" Click="odustanuButton_Click" Width="120"/>
+        <Button x:Name="sacuvajButton" Content="Sacuvaj" HorizontalAlignment="Left" Margin="182,557,0,0" VerticalAlignment="Top" Width="120" Click="sacuvajButton_Click"/>
     </Grid>
 </Page>

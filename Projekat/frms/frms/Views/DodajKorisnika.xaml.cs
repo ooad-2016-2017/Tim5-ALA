@@ -39,5 +39,10 @@ namespace frms.Views
         {
 
         }
+
+        private void odustaniButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
