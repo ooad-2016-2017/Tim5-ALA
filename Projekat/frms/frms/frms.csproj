@@ -113,6 +113,15 @@
     <Compile Include="Models\Zahtjev.cs" />
     <Compile Include="Models\ZahtjevRezervacija.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\DodajSalu.xaml.cs">
+      <DependentUpon>DodajSalu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DodajKorisnika.xaml.cs">
+      <DependentUpon>DodajKorisnika.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KreirajGrupu.xaml.cs">
+      <DependentUpon>KreirajGrupu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -151,6 +160,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DodajSalu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DodajKorisnika.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\KreirajGrupu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
