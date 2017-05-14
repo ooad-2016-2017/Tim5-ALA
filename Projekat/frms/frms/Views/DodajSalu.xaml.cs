@@ -22,7 +22,7 @@ namespace frms.Views
     /// </summary>
     public sealed partial class DodajSalu : Page
     {
-        public void DodajSalu()
+        public DodajSalu()
         {
             this.InitializeComponent();
         }
@@ -30,6 +30,11 @@ namespace frms.Views
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             // TODO
+        }
+
+        private void odustaniButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

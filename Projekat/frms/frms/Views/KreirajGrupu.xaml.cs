@@ -31,5 +31,20 @@ namespace frms.Views
         {
             // TODO
         }
+
+        private void odustanuButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void sacuvajButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void pretraziSaleButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

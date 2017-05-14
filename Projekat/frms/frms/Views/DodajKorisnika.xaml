@@ -13,25 +13,25 @@
                 <Run Text="Ime"/>
                 <Run Text=":"/>
             </TextBlock>
-            <TextBox x:Name="imeKorisnika" TextWrapping="Wrap" Text="" TextChanged="textBox_TextChanged" Margin="10,0"/>
+            <TextBox x:Name="imeKorisnika" TextWrapping="Wrap" Text=""  Margin="10,0"/>
             <TextBlock x:Name="textBlock_Copy" TextWrapping="Wrap" Height="20" HorizontalAlignment="Right" Width="330">
                 <Run Text="Prezime"/>
                 <Run Text=":"/>
             </TextBlock>
-            <TextBox x:Name="prezimeKorisnika" TextWrapping="Wrap" Text="" TextChanged="textBox_TextChanged" Margin="10,0"/>
+            <TextBox x:Name="prezimeKorisnika" TextWrapping="Wrap" Text=""  Margin="10,0"/>
             <TextBlock x:Name="textBlock_Copy1" TextWrapping="Wrap" Height="20" HorizontalAlignment="Right" Width="330">
                 <Run Text="Korisnicko ime"/>
                 <Run Text=":"/>
             </TextBlock>
-            <TextBox x:Name="userName" TextWrapping="Wrap" Text="" TextChanged="textBox_TextChanged" Margin="10,0"/>
+            <TextBox x:Name="userName" TextWrapping="Wrap" Text=""  Margin="10,0"/>
             <TextBlock x:Name="textBlock_Copy2" TextWrapping="Wrap" Height="20" HorizontalAlignment="Right" Width="330">
                 <Run Text="Password"/>
                 <Run Text=":"/>
             </TextBlock>
-            <TextBox x:Name="passwordKorisnika" TextWrapping="Wrap" Text="" TextChanged="textBox_TextChanged" Margin="10,0"/>
+            <TextBox x:Name="passwordKorisnika" TextWrapping="Wrap" Text=""  Margin="10,0"/>
         </StackPanel>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="553,557,-202,-97" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <Button x:Name="odustaniButton" Content="Odustani" HorizontalAlignment="Left" Margin="58,426,0,0" VerticalAlignment="Top" Click="button_Click" Width="120"/>
+        <Button x:Name="odustaniButton" Content="Odustani" HorizontalAlignment="Left" Margin="58,426,0,0" VerticalAlignment="Top" Click="odustaniButton_Click_1" Width="120"/>
         <Button x:Name="sacuvajButton" Content="Sacuvaj" HorizontalAlignment="Left" Margin="183,426,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,53,0,0" TextWrapping="Wrap" Text="Dodaj novog korisnika" VerticalAlignment="Top" Width="168"/>
         <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="304,14,0,0" TextWrapping="Wrap" Text="Odjava" VerticalAlignment="Top"/>
