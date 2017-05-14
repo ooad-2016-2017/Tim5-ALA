@@ -1,4 +1,5 @@
-﻿using System;
+﻿using frms.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace frms.Views
         public DodajKorisnika()
         {
             this.InitializeComponent();
+
+            DataContext = new KorisnikInputViewModel();
         }
 
         private void sacuvajButton_Click(object sender, RoutedEventArgs e)

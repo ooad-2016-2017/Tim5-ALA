@@ -1,4 +1,5 @@
-﻿using System;
+﻿using frms.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace frms.Views
         public UpdateSchedule()
         {
             this.InitializeComponent();
+
+            DataContext = new RasporedInputViewModel();
         }
 
         private void ClearScheduleButton_Click(object sender, RoutedEventArgs e)

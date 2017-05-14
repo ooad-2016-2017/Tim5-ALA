@@ -1,4 +1,5 @@
-﻿using System;
+﻿using frms.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace frms.Views
         public SearchHalls()
         {
             this.InitializeComponent();
+
+            DataContext = new SalaPretragaViewModel();
         }
 
         // zabrana karaktera koji nisu brojevi

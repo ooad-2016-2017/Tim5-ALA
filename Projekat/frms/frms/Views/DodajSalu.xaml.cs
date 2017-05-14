@@ -1,4 +1,5 @@
-﻿using System;
+﻿using frms.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,11 @@ namespace frms.Views
     /// </summary>
     public sealed partial class DodajSalu : Page
     {
-        public void DodajSalu()
+        public DodajSalu()
         {
             this.InitializeComponent();
+
+            DataContext = new SalaInputViewModel();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
