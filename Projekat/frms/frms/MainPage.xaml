@@ -9,13 +9,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <SplitView x:Name="MainSplitView"
-                   IsPaneOpen="False"
                    CompactPaneLength="48"
                    OpenPaneLength="200"
-                   DisplayMode="Overlay"
+                   IsPaneOpen="False"
+                   DisplayMode="CompactInline"
                    PaneBackground="#2c6187">
             <SplitView.Pane>
-                <StackPanel>
+                <StackPanel >
                     <StackPanel Orientation="Horizontal"
                                 Background="#2c6187">
                         <Button x:Name="HamburgerButton"
@@ -85,8 +85,13 @@
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid>
-                    <!-- Ovdje će se dodavati stranice iz Views foldera -->
-                    <Frame x:Name="aktivnaStranica"/>
+                    <StackPanel>
+                        <StackPanel Background="#2c6187">
+                            <TextBlock HorizontalAlignment="Right" Margin="15" Foreground="White">FRMS</TextBlock>
+                        </StackPanel>
+                        <!-- Ovdje će se dodavati stranice iz Views foldera -->
+                        <Frame x:Name="aktivnaStranica"/>
+                    </StackPanel>
                 </Grid>
             </SplitView.Content>
         </SplitView>

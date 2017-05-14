@@ -22,12 +22,25 @@ namespace frms
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        private double normalCompactPaneLength;
+
+        private void HidePane()
+        {
+            MainSplitView.CompactPaneLength = 0;
+            MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+            MainSplitView.IsPaneOpen = false;
+        }
+
         public MainPage()
         {
             this.InitializeComponent();
-            aktivnaStranica.Navigate(typeof(Views.Login));
             // treba disableati navigaciju dok se ne odradi login?
             // ili samo da kontrole ništa ne prikazuju :)
+
+            this.normalCompactPaneLength = MainSplitView.CompactPaneLength;
+            HidePane();
+            aktivnaStranica.Navigate(typeof(Views.Login));
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
