@@ -21,9 +21,9 @@ namespace frms.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class SearchHalls : Page
+    public sealed partial class RegularSearchHalls : Page
     {
-        public SearchHalls()
+        public RegularSearchHalls()
         {
             this.InitializeComponent();
 
@@ -41,7 +41,7 @@ namespace frms.Views
             {
                 Convert.ToInt32(sender.Text);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 if(sender.Text != null)
                 {

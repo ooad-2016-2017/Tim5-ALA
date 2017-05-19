@@ -22,59 +22,45 @@ namespace frms
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
         private double normalCompactPaneLength;
-
-        private void HidePane()
-        {
-            MainSplitView.CompactPaneLength = 0;
-            MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
-            MainSplitView.IsPaneOpen = false;
-        }
+        
+        // mainpage je okvir za cijelu aplikaciju, pane treba sakriti samo kada je login forma aktivna
+        // a adaptivni triggeri svakako prikažu pane kad se resize uradi (sa prethodnom verzijom)
+        // => riješila sam sve na drugi način xD
 
         public MainPage()
         {
             this.InitializeComponent();
-            // treba disableati navigaciju dok se ne odradi login?
-            // ili samo da kontrole ništa ne prikazuju :)
-
             this.normalCompactPaneLength = MainSplitView.CompactPaneLength;
-            HidePane();
             aktivnaStranica.Navigate(typeof(Views.Login));
         }
 
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        public void Navigate(Type sourcePageType)
         {
-            if (MainSplitView.IsPaneOpen)
-            {
-                MainSplitView.IsPaneOpen = false;
-                MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
-            }
-            else
-            {
-                MainSplitView.IsPaneOpen = true;
-                MainSplitView.DisplayMode = SplitViewDisplayMode.Overlay;
-            }
+            aktivnaStranica.Navigate(sourcePageType);
         }
 
-        private void UpdateScheduleButton_Click(object sender, RoutedEventArgs e)
+        public void NavigatePane(Type sourcePageType)
         {
-            aktivnaStranica.Navigate(typeof(Views.UpdateSchedule));
+            aktivniPane.Navigate(sourcePageType);
         }
 
-        private void ManageGroupsButton_Click(object sender, RoutedEventArgs e)
+        public void ShowPane()
         {
-            aktivnaStranica.Navigate(typeof(Views.ManageGroups));
+            MainSplitView.IsPaneOpen = true;
+            MainSplitView.DisplayMode = SplitViewDisplayMode.Overlay;
         }
 
-        private void ReserveHallButton_Click(object sender, RoutedEventArgs e)
+        public void HidePane()
         {
-            aktivnaStranica.Navigate(typeof(Views.ReserveHall));
+            MainSplitView.IsPaneOpen = false;
+            MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+        }
+        
+        public bool IsPaneOpen()
+        {
+            return MainSplitView.IsPaneOpen;
         }
 
-        private void SearchHallsButton_Click(object sender, RoutedEventArgs e)
-        {
-            aktivnaStranica.Navigate(typeof(Views.SearchHalls));
-        }
     }
 }

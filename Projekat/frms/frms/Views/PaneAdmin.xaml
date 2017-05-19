@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="frms.Views.PaneAdmin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:frms.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Transparent">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Background="#2c6187">
+                <Button x:Name="HamburgerButton"
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xE700;"
+                        Width="50"
+                        Height="50"
+                        Background="Transparent"
+                        Click="HamburgerButton_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Background="#2c6187">
+                <Button x:Name="RequestsButton"
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xE777;"
+                        Width="50"
+                        Height="50"
+                        Background="Transparent"
+                        Click="RequestsButton_Click"/>
+                <TextBlock Text="Requests"
+                            FontSize="18"
+                            VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Background="#2c6187">
+                <Button x:Name="AddUsersButton"
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xE716;"
+                        Width="50"
+                        Height="50"
+                        Background="Transparent"
+                        Click="AddUsersButton_Click"/>
+                <TextBlock Text="Add users"
+                            FontSize="18"
+                            VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Background="#2c6187">
+                <Button x:Name="AddHallsButton"
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xE787;"
+                        Width="50"
+                        Height="50"
+                        Background="Transparent"
+                        Click="AddHallsButton_Click"/>
+                <TextBlock Text="Add halls"
+                            FontSize="18"
+                            VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Background="#2c6187">
+                <Button x:Name="SearchHallsButton"
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xE721;"
+                        Width="50"
+                        Height="50"
+                        Background="Transparent"
+                        Click="SearchHallsButton_Click"/>
+                <TextBlock Text="Search halls"
+                            FontSize="18"
+                            VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

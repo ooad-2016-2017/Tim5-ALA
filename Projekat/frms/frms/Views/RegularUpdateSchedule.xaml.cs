@@ -21,30 +21,23 @@ namespace frms.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class RegularUpdateShedule : Page
     {
-        private MainPage mainPage
-        {
-            get
-            {
-                var rootFrame = Window.Current.Content as Frame;
-                return rootFrame.Content as MainPage;
-            }
-        }
-
-        public Login()
+        public RegularUpdateShedule()
         {
             this.InitializeComponent();
 
-            DataContext = new LoginViewModel();
+            DataContext = new RasporedInputViewModel();
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private void ClearScheduleButton_Click(object sender, RoutedEventArgs e)
         {
-            if(Username.Text == "admin")
-                mainPage.NavigatePane(typeof(Views.PaneAdmin));
-            else 
-                mainPage.NavigatePane(typeof(Views.PaneRegular));
+
+        }
+
+        private void ManageTasksButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
