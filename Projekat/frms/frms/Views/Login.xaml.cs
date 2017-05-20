@@ -1,9 +1,12 @@
-﻿using frms.ViewModels;
+﻿using frms.DataAccessLayer;
+using frms.Helper;
+using frms.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -32,7 +35,18 @@ namespace frms.Views
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
+            string user = Username.Text;
+            string pass = Utility.SHA512(Password.Password);
+            
+            using (var db = new FakultetDataSource())
+            {
+                var dbUser = db.Korisnici.FirstOrDefault(v => v.PasswordHash == pass && v.Username == user);
+
+                if ( dbUser == null )
+                {
+                    //login fail
+                }
+            }
         }
     }
 }
