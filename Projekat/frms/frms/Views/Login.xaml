@@ -13,8 +13,13 @@
           VerticalAlignment="Center" Width="274">
 
         <StackPanel>
-            <TextBox x:Name="Username" PlaceholderText="Username" AutomationProperties.IsRequiredForForm="True"/>
-            <PasswordBox x:Name="Password" PlaceholderText="Password" Margin="0,10,0,0" AutomationProperties.IsRequiredForForm="True"/>
+            <TextBox x:Name="Username" 
+                     PlaceholderText="Username" 
+                     AutomationProperties.IsRequiredForForm="True"/>
+            <PasswordBox x:Name="Password" 
+                         PlaceholderText="Password" 
+                         Margin="0,10,0,0" 
+                         AutomationProperties.IsRequiredForForm="True"/>
             <Button x:Name="LoginButton"
                     Margin="15,15,0,15"
                     HorizontalAlignment="Right" 

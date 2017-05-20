@@ -16,6 +16,7 @@
                         Content="&#xE700;"
                         Width="50"
                         Height="50"
+                        Foreground="White"
                         Background="Transparent"
                         Click="HamburgerButton_Click"/>
             </StackPanel>
@@ -23,40 +24,46 @@
                         Background="#2c6187">
                 <Button x:Name="RequestsButton"
                         FontFamily="Segoe MDL2 Assets"
-                        Content="&#xE777;"
+                        Content="&#xE945;"
                         Width="50"
                         Height="50"
+                        Foreground="White"
                         Background="Transparent"
                         Click="RequestsButton_Click"/>
-                <TextBlock Text="Requests"
-                            FontSize="18"
-                            VerticalAlignment="Center"/>
+                <TextBlock Text="Zahtjevi"
+                           FontSize="18"
+                           Foreground="White"
+                           VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Background="#2c6187">
                 <Button x:Name="AddUsersButton"
                         FontFamily="Segoe MDL2 Assets"
-                        Content="&#xE716;"
+                        Content="&#xE8FA;"
                         Width="50"
                         Height="50"
+                        Foreground="White"
                         Background="Transparent"
                         Click="AddUsersButton_Click"/>
-                <TextBlock Text="Add users"
-                            FontSize="18"
-                            VerticalAlignment="Center"/>
+                <TextBlock Text="Korisnici"
+                           FontSize="18"
+                           Foreground="White" 
+                           VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Background="#2c6187">
                 <Button x:Name="AddHallsButton"
                         FontFamily="Segoe MDL2 Assets"
-                        Content="&#xE787;"
+                        Content="&#xECC4;"
                         Width="50"
                         Height="50"
+                        Foreground="White"
                         Background="Transparent"
                         Click="AddHallsButton_Click"/>
-                <TextBlock Text="Add halls"
-                            FontSize="18"
-                            VerticalAlignment="Center"/>
+                <TextBlock Text="Sale"
+                           FontSize="18"
+                           Foreground="White" 
+                           VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Background="#2c6187">
@@ -65,11 +72,13 @@
                         Content="&#xE721;"
                         Width="50"
                         Height="50"
+                        Foreground="White"
                         Background="Transparent"
                         Click="SearchHallsButton_Click"/>
-                <TextBlock Text="Search halls"
-                            FontSize="18"
-                            VerticalAlignment="Center"/>
+                <TextBlock Text="Pretraga"
+                           FontSize="18"
+                           Foreground="White"
+                           VerticalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
     </Grid>

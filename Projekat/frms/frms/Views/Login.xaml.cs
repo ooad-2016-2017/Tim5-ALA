@@ -35,7 +35,6 @@ namespace frms.Views
         public Login()
         {
             this.InitializeComponent();
-
             DataContext = new LoginViewModel();
         }
 
