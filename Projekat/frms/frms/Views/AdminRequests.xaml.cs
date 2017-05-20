@@ -1,5 +1,4 @@
-﻿using frms.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,25 +20,11 @@ namespace frms.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class ReserveHall : Page
+    public sealed partial class AdminRequests : Page
     {
-        public ReserveHall()
+        public AdminRequests()
         {
             this.InitializeComponent();
-
-            DataContext = new RezervacijaSaleViewModel();
-
-            DatumPocetka.Date = DateTime.Now;
-        }
-
-        private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonPretraga_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

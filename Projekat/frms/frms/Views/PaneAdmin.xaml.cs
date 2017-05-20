@@ -1,12 +1,8 @@
-﻿using frms.DataAccessLayer;
-using frms.Helper;
-using frms.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,7 +20,7 @@ namespace frms.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class PaneAdmin : Page
     {
         private MainPage mainPage
         {
@@ -35,26 +31,41 @@ namespace frms.Views
             }
         }
 
-        public Login()
+        public PaneAdmin()
         {
             this.InitializeComponent();
-            DataContext = new LoginViewModel();
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
-            string user = Username.Text;
-            string pass = Utility.SHA512(Password.Password);
-            
-            using (var db = new FakultetDataSource())
+            if (mainPage.IsPaneOpen())
             {
-                var dbUser = db.Korisnici.FirstOrDefault(v => v.PasswordHash == pass && v.Username == user);
-
-                if ( dbUser == null )
-                {
-                    //login fail
-                }
+                mainPage.HidePane();
             }
+            else
+            {
+                mainPage.ShowPane();
+            }
+        }
+
+        private void RequestsButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage.Navigate(typeof(Views.AdminRequests));
+        }
+
+        private void AddUsersButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage.Navigate(typeof(Views.AdminAddUsers));
+        }
+
+        private void AddHallsButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage.Navigate(typeof(Views.AdminAddHalls));
+        }
+
+        private void SearchHallsButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage.Navigate(typeof(Views.AdminSearchHalls));
         }
     }
 }

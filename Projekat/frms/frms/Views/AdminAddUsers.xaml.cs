@@ -1,5 +1,4 @@
-﻿using frms.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,23 +20,11 @@ namespace frms.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class UpdateSchedule : Page
+    public sealed partial class AdminAddUsers : Page
     {
-        public UpdateSchedule()
+        public AdminAddUsers()
         {
             this.InitializeComponent();
-
-            DataContext = new RasporedInputViewModel();
-        }
-
-        private void ClearScheduleButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ManageTasksButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

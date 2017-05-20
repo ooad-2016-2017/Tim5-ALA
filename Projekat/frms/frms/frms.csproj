@@ -126,6 +126,18 @@
     <Compile Include="ViewModels\RezervacijaSaleViewModel.cs" />
     <Compile Include="ViewModels\SalaInputViewModel.cs" />
     <Compile Include="ViewModels\SalaPretragaViewModel.cs" />
+    <Compile Include="Views\AdminAddHalls.xaml.cs">
+      <DependentUpon>AdminAddHalls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminAddUsers.xaml.cs">
+      <DependentUpon>AdminAddUsers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminRequests.xaml.cs">
+      <DependentUpon>AdminRequests.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminSearchHalls.xaml.cs">
+      <DependentUpon>AdminSearchHalls.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DodajSalu.xaml.cs">
       <DependentUpon>DodajSalu.xaml</DependentUpon>
     </Compile>
@@ -138,17 +150,23 @@
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ManageGroups.xaml.cs">
-      <DependentUpon>ManageGroups.xaml</DependentUpon>
+    <Compile Include="Views\RegularManageGroups.xaml.cs">
+      <DependentUpon>RegularManageGroups.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ReserveHall.xaml.cs">
-      <DependentUpon>ReserveHall.xaml</DependentUpon>
+    <Compile Include="Views\PaneAdmin.xaml.cs">
+      <DependentUpon>PaneAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SearchHalls.xaml.cs">
-      <DependentUpon>SearchHalls.xaml</DependentUpon>
+    <Compile Include="Views\PaneRegular.xaml.cs">
+      <DependentUpon>PaneRegular.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\UpdateSchedule.xaml.cs">
-      <DependentUpon>UpdateSchedule.xaml</DependentUpon>
+    <Compile Include="Views\RegularReserveHall.xaml.cs">
+      <DependentUpon>RegularReserveHall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegularSearchHalls.xaml.cs">
+      <DependentUpon>RegularSearchHalls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegularUpdateSchedule.xaml.cs">
+      <DependentUpon>RegularUpdateSchedule.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\System\Object.cs" />
   </ItemGroup>
@@ -177,6 +195,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\AdminAddHalls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminAddUsers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminRequests.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminSearchHalls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DodajSalu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -193,19 +227,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ManageGroups.xaml">
+    <Page Include="Views\RegularManageGroups.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ReserveHall.xaml">
+    <Page Include="Views\PaneAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SearchHalls.xaml">
+    <Page Include="Views\PaneRegular.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\UpdateSchedule.xaml">
+    <Page Include="Views\RegularReserveHall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegularSearchHalls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegularUpdateSchedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
