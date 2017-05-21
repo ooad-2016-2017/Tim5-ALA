@@ -52,9 +52,18 @@ namespace frms
         }
 
         public void HidePane()
-        {
-            MainSplitView.IsPaneOpen = false;
-            MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+        { 
+            if (HamburgerButton.Visibility == Visibility.Collapsed)
+            {
+                MainSplitView.IsPaneOpen = false;
+                MainSplitView.DisplayMode = SplitViewDisplayMode.CompactOverlay;
+
+            }
+            else
+            {
+                MainSplitView.IsPaneOpen = false;            
+            }
+
         }
         
         public bool IsPaneOpen()
@@ -62,5 +71,16 @@ namespace frms
             return MainSplitView.IsPaneOpen;
         }
 
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(MainSplitView.IsPaneOpen)
+            {
+                HidePane();
+            }
+            else
+            {
+                ShowPane();
+            }
+        }
     }
 }

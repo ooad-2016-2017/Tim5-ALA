@@ -41,9 +41,16 @@ namespace frms.Views
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             if(Username.Text == "admin")
+            {
                 mainPage.NavigatePane(typeof(Views.PaneAdmin));
-            else 
+                mainPage.Navigate(typeof(Views.AdminAddHalls));
+
+            }
+            else
+            {
                 mainPage.NavigatePane(typeof(Views.PaneRegular));
+                mainPage.Navigate(typeof(Views.RegularUpdateShedule));
+            }
         }
     }
 }
