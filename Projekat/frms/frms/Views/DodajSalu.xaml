@@ -8,32 +8,64 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel HorizontalAlignment="Left" Height="64" Margin="10,89,0,0" VerticalAlignment="Top" Width="340">
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="Naziv Sale:" Height="20"/>
-            <TextBox x:Name="nazivSale" TextWrapping="Wrap" Text="" Margin="10,0"/>
-        </StackPanel>
-        <RelativePanel HorizontalAlignment="Left" Height="93" Margin="10,158,0,0" VerticalAlignment="Top" Width="340">
-            <TextBlock x:Name="brMjesta" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Broj Mjesta:" Width="124"   Margin="43,15,-167,-15"/>
-            <ComboBox x:Name="brojMjesta" HorizontalAlignment="Right" Height="32" VerticalAlignment="Top" Width="117" RelativePanel.RightOf="brMjesta" Margin="0,10,-289,-10"/>
-            <TextBlock x:Name="brRacunara" HorizontalAlignment="Left" TextWrapping="Wrap" Width="124"   Margin="43,56,-167,-56">
-                <Run Text="Broj "/>
-                <Run Text="Racunara"/>
-                <Run Text=":"/>
-            </TextBlock>
-            <ComboBox x:Name="brojRacunara" HorizontalAlignment="Right" Height="32" VerticalAlignment="Top" Width="117" RelativePanel.RightOf="brRacunara" Margin="0,51,-289,-51"/>
-        </RelativePanel>
-        <RelativePanel HorizontalAlignment="Left" Height="181" Margin="10,256,0,0" VerticalAlignment="Top" Width="340">
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" TextWrapping="Wrap" Width="146" Margin="0,0,-84.333,-1">
-                <Run Text="Dodatne "/>
-                <Run Text="specifikacije:"/>
-            </TextBlock>
-            <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="C++ platforma" VerticalAlignment="Top" Width="126" Margin="84,50,-148.333,-50"/>
-            <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" Text="Android platforma" VerticalAlignment="Top" Width="136" Margin="84,25,-158.333,-55"/>
-            <CheckBox x:Name="CCheck" Content="" HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="110" Margin="220,52,-210,-38"/>
-            <CheckBox x:Name="androidCheck" Content="" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="120" Margin="220,20,-220,-20"/>
-        </RelativePanel>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="553,557,-202,-97" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <Button x:Name="odustaniButton" Content="Odustani" HorizontalAlignment="Left" Margin="54,493,0,0" VerticalAlignment="Top" Click="odustaniButton_Click" Width="120"/>
-        <Button x:Name="sacuvajButton" Content="Sacuvaj" HorizontalAlignment="Left" Margin="179,493,0,0" VerticalAlignment="Top" Width="120"/>
+        
+            <StackPanel Orientation="Vertical" Margin="20,80,20,80">
+            <StackPanel Orientation="Horizontal" Margin="15">
+                <TextBlock x:Name="labelaNazivSale" 
+                           Margin="15"                         
+                           Text="Naziv Sale:"
+                           Height="20"
+                           Width="100"/>
+                <TextBox x:Name="nazivSale"
+                         Width="150"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="15">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Broj Mjesta:" 
+                               Margin="15"
+                               Width="100"/>
+                    <TextBox x:Name="brojMjesta"
+                              Margin="15"
+                              Width="100"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Broj Racunara:" 
+                               Margin="15"
+                               Width="100"/>
+                    <TextBox x:Name="brojRacunara"
+                              Margin="15"
+                              Width="100"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="15">
+                    <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Dodatne Specifikacije:" 
+                             
+                               TextWrapping="Wrap"/>
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <TextBlock Text="Android platforma" Width="150"/>
+                            <CheckBox x:Name="androidPlatforma" Margin="50, 0,0,0"/>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <TextBlock Text="C++ platforma" Width="150"/>
+                            <CheckBox x:Name="CPlatforma" Margin="50, 0,0,0"/>
+
+                        </StackPanel>
+                    </StackPanel>
+
+            </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <Button x:Name="odustaniButton" Content="Odustani" Margin=" 10" Width="100"/>
+                    <Button x:Name="sacuvajButton" Content="Sacuvaj" Margin="10" Width="100"/>
+                </StackPanel>
+
+            </StackPanel>
+            </StackPanel>
+        
+
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
 ﻿using System;
+using frms.ViewModels;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,38 @@ namespace frms.Views
         public AdminAddHalls()
         {
             this.InitializeComponent();
+            DataContext = new SalaInputViewModel();
+
+
         }
+        // alternativa za numericupdown
+
+        private void brojMjesta_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        {
+            // clunky but eh
+
+            try
+            {
+                Convert.ToInt32(sender.Text);
+            }
+            catch (Exception)
+            {
+                if (sender.Text != null)
+                {
+                    int len = sender.Text.Length - 1;
+                    sender.Text = sender.Text.Substring(0, len);
+                }
+            }
+
+        }
+        private void odustaninButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void sacuvajButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
