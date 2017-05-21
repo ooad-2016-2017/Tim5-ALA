@@ -22,9 +22,13 @@ namespace frms.Views
     /// </summary>
     public sealed partial class RegularAddGroup : Page
     {
+        private String predmet;
+
         public RegularAddGroup()
         {
             this.InitializeComponent();
+            predmet = RegularManageGroups.OdabraniPredmet;
+            nazivPredmeta.Text = predmet;
         }
         private void odustaninButton_Click(object sender, RoutedEventArgs e)
         {
