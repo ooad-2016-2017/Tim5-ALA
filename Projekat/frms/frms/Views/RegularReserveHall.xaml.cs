@@ -32,6 +32,7 @@ namespace frms.Views
             DatumPocetka.Date = DateTime.Now;
         }
 
+
         private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)
         {
 

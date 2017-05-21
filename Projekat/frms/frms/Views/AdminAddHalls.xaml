@@ -9,5 +9,66 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <StackPanel Orientation="Vertical" Margin="20,50,20,50">
+            <StackPanel Orientation="Horizontal" Margin="15">
+                <TextBlock x:Name="labelaNazivSale" 
+                           Margin="15"                         
+                           Text="Naziv Sale:"
+                           Height="20"
+                           Width="100"/>
+                <TextBox x:Name="nazivSale"
+                         Width="150"
+                         Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="15">
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Broj Mjesta:" 
+                               Margin="15"
+                               Width="100"/>
+                    <TextBox x:Name="brojMjesta"
+                            Height="30"
+                             Margin="15"
+                              Width="100"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Broj Racunara:" 
+                               Margin="15"
+                               Width="100"/>
+                    <TextBox x:Name="brojRacunara"
+                             Height="30" 
+                             Margin="15"
+                              Width="100"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="15">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Dodatne Specifikacije:" 
+                             
+                               TextWrapping="Wrap"/>
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <TextBlock Text="Android platforma" Width="150"/>
+                            <CheckBox x:Name="androidPlatforma"  Margin="50, 0,0,0"/>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <TextBlock Text="C++ platforma" Width="150"/>
+                            <CheckBox x:Name="CPlatforma" Margin="50, 0,0,0"/>
+
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <Button x:Name="odustaniButton" Content="Odustani" Margin=" 10" Width="100"/>
+                    <Button x:Name="sacuvajButton" Content="Sacuvaj" Margin="10" Width="100"/>
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+
+
     </Grid>
 </Page>
