@@ -150,6 +150,12 @@
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PaneBlank.xaml.cs">
+      <DependentUpon>PaneBlank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegularAddGroup.xaml.cs">
+      <DependentUpon>RegularAddGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegularManageGroups.xaml.cs">
       <DependentUpon>RegularManageGroups.xaml</DependentUpon>
     </Compile>
@@ -224,6 +230,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PaneBlank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegularAddGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

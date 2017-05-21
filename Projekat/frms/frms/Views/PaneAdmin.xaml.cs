@@ -36,18 +36,6 @@ namespace frms.Views
             this.InitializeComponent();
         }
 
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (mainPage.IsPaneOpen())
-            {
-                mainPage.HidePane();
-            }
-            else
-            {
-                mainPage.ShowPane();
-            }
-        }
-
         private void RequestsButton_Click(object sender, RoutedEventArgs e)
         {
             mainPage.Navigate(typeof(Views.AdminRequests));
@@ -66,6 +54,23 @@ namespace frms.Views
         private void SearchHallsButton_Click(object sender, RoutedEventArgs e)
         {
             mainPage.Navigate(typeof(Views.AdminSearchHalls));
+        }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(mainPage.IsPaneOpen())
+            {
+                mainPage.HidePane();
+            }
+            else
+            {
+                mainPage.ShowPane();
+            }
+        }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage.Logout();
         }
     }
 }

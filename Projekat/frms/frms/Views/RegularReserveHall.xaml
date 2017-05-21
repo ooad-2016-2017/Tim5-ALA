@@ -7,98 +7,134 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <!-- možda dodati visual state triggere da poslože jedno ispod drugog (naknadno) -->
-    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Orientation="Horizontal">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto"
+                      Height="{Binding ElementName=MainStackPanel, Path=ActualHeight}">
             <StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Predmet: "
-                               Margin="15"
-                               Width="100"/>
-                    <ComboBox x:Name="ComboBoxPredmeti"
-                              Margin="15"
-                              Width="150"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Dan: "
-                               Margin="15"
-                               Width="100"/>
-                    <ComboBox x:Name="ComboBoxDani"
-                              Margin="15"
-                              Width="150">
-                        <ComboBoxItem>
-                            <TextBlock>Ponedjeljak</TextBlock>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock>Utorak</TextBlock>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock>Srijeda</TextBlock>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock>Četvrtak</TextBlock>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock>Petak</TextBlock>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock>Subota</TextBlock>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock>Nedjelja</TextBlock>
-                        </ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Ponavljaj: "
-                               Margin="15"
-                               Width="100"/>
-                    <ComboBox x:Name="ComboBoxPonavljaj"
-                              Margin="15"
-                              Width="150">
-                        <ComboBoxItem>
-                            <TextBlock>Sedmično</TextBlock>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock>Mjesečno</TextBlock>
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            <TextBlock>Godišnje</TextBlock>
-                        </ComboBoxItem>
-                    </ComboBox>
+                <StackPanel x:Name="MainStackPanel"
+                        Orientation="Horizontal">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Predmet: "
+                                   Margin="15"
+                                   Width="100"/>
+                            <ComboBox x:Name="ComboBoxPredmeti"
+                                  Margin="15"
+                                  Width="150"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Dan: "
+                                   Margin="15"
+                                   Width="100"/>
+                            <ComboBox x:Name="ComboBoxDani"
+                                  Margin="15"
+                                  Width="150">
+                                <ComboBoxItem>
+                                    <TextBlock>Ponedjeljak</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock>Utorak</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock>Srijeda</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock>Četvrtak</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock>Petak</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock>Subota</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock>Nedjelja</TextBlock>
+                                </ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Ponavljaj: "
+                                   Margin="15"
+                                   Width="100"/>
+                            <ComboBox x:Name="ComboBoxPonavljaj"
+                                  Margin="15"
+                                  Width="150">
+                                <ComboBoxItem>
+                                    <TextBlock>Nikad</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock>Sedmično</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock>Mjesečno</TextBlock>
+                                </ComboBoxItem>
+                                <ComboBoxItem>
+                                    <TextBlock>Godišnje</TextBlock>
+                                </ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Margin="10">
+                        <StackPanel>
+                            <TextBlock Text="Počinje:"
+                                   Margin="5"/>
+                            <TimePicker x:Name="TimePickerStart"
+                                    Margin="5"/>
+                            <CalendarDatePicker x:Name="DatumPocetka"
+                                            Margin="5"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Završava:"
+                                       Margin="5"/>
+                            <TimePicker x:Name="TimePickerEnd"
+                                        Margin="5"/>
+                            <CalendarDatePicker x:Name="DatumZavrsetka"
+                                                Margin="5"/>
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="ButtonOtkazi"
-                            Margin="15"
-                            Width="120"
-                            Height="35"
-                            Content="Otkaži"
-                            Click="ButtonOtkazi_Click"/>
+                                Margin="15"
+                                Width="120"
+                                Height="35"
+                                Content="Otkaži"
+                                Click="ButtonOtkazi_Click"/>
                     <Button x:Name="ButtonPretraga"
-                            Margin="15"
-                            Width="120"
-                            Height="35"
-                            Content="Pretraga"
-                            Click="ButtonPretraga_Click"/>
+                                Margin="15"
+                                Width="120"
+                                Height="35"
+                                Content="Pretraga"
+                                Click="ButtonPretraga_Click"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Margin="5">
-                <StackPanel>
-                    <TextBlock Text="Počinje:"
-                               Margin="5"/>
-                    <TimePicker x:Name="TimePickerStart"
-                                Margin="5"/>
-                    <CalendarDatePicker x:Name="DatumPocetka"
-                                        Margin="5"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="Završava:"
-                               Margin="5"/>
-                    <TimePicker x:Name="TimePickerEnd"
-                                Margin="5"/>
-                </StackPanel>
-            </StackPanel>           
-        </StackPanel>
+        </ScrollViewer>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+
+                <VisualState x:Name="DesktopAndTablet">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="641"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainStackPanel.Orientation"
+                                Value="Horizontal"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="Mobile">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MainStackPanel.Orientation"
+                                Value="Vertical"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>

@@ -23,6 +23,18 @@ namespace frms.Views
     /// </summary>
     public sealed partial class RegularManageGroups : Page
     {
+        public static List<String> listaPredmeta = new List<String>();
+
+        public static String OdabraniPredmet;      
+        private MainPage mainPage
+        {
+            get
+            {
+                var rootFrame = Window.Current.Content as Frame;
+                return rootFrame.Content as MainPage;
+            }
+        }
+
         public RegularManageGroups()
         {
             this.InitializeComponent();
@@ -34,8 +46,10 @@ namespace frms.Views
 
             for (int i = 1; i < 5; ++i)
             {
-                Predmeti.Items.Add("Predmet " + i.ToString());
+                listaPredmeta.Add("Predmet " + i.ToString());
             }
+
+            Predmeti.ItemsSource = listaPredmeta;
 
         }        
 
@@ -43,21 +57,33 @@ namespace frms.Views
         {
             // TODO: kôd za dodavanje grupa na predmetu (viewmodel)
 
-            rootPivot.Title = e.AddedItems[0];
+            OdabraniPredmet = (String)e.AddedItems[0];
 
+            int brojStudenata = 20;
+            
             for (int i = 1; i < 5; ++i)
             {
-                TextBlock tb = new TextBlock();
-                tb.Text = "Grupa " + i.ToString();
-                PivotItem pa = new PivotItem();
-                pa.Content = tb;
-                rootPivot.Items.Add(pa);
+                Grid sp = new Grid();
+                sp.Width = 150;
+
+                TextBlock ime = new TextBlock();
+                ime.Text = "Grupa " + i.ToString();
+                ime.HorizontalAlignment = HorizontalAlignment.Left;
+
+                TextBlock brojS = new TextBlock();
+                brojS.Text = Convert.ToString(brojStudenata);
+                brojS.HorizontalAlignment = HorizontalAlignment.Right;
+
+                sp.Children.Add(ime);
+                sp.Children.Add(brojS);
+
+                Grupe.Items.Add(sp);
             }
         }
 
         private void CreateNewGroup_Click(object sender, RoutedEventArgs e)
         {
-
+            mainPage.Navigate(typeof(RegularAddGroup));
         }
     }
 }

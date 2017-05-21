@@ -15,14 +15,25 @@
                    DisplayMode="CompactInline"
                    PaneBackground="#2c6187">
             <SplitView.Pane>
-                <Frame x:Name="aktivniPane"/>
+                <StackPanel x:Name="dummy">
+                    <Frame x:Name="aktivniPane"/>
+                </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid>
                     <StackPanel>
-                        <StackPanel Background="#2c6187">
+                        <Grid Background="#2c6187">
+                            <Button x:Name="HamburgerButton"
+                                    FontFamily="Segoe MDL2 Assets"
+                                    Content="&#xE700;"
+                                    Width="50"
+                                    Height="50"
+                                    Foreground="White"
+                                    Background="Transparent"
+                                    HorizontalAlignment="Left"
+                                    Click="HamburgerButton_Click"/>
                             <TextBlock HorizontalAlignment="Right" Margin="15" Foreground="White">FRMS</TextBlock>
-                        </StackPanel>
+                        </Grid>
                         <Frame x:Name="aktivnaStranica"/>
                     </StackPanel>
                 </Grid>
@@ -39,12 +50,12 @@
                         <AdaptiveTrigger MinWindowWidth="1000" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <!-- SplitView pane shows as overlay -->
-                        <!-- Splitview pane will close however :-( -->
                         <Setter Target="MainSplitView.DisplayMode"
-                                Value="Inline" />
+                                Value="CompactOverlay" />
                         <Setter Target="MainSplitView.IsPaneOpen"
-                                Value="True" />
+                                Value="False" />
+                        <Setter Target="HamburgerButton.Visibility"
+                                Value="Collapsed"/>
                     </VisualState.Setters>
                 </VisualState>
 
@@ -58,6 +69,8 @@
                                 Value="CompactOverlay" />
                         <Setter Target="MainSplitView.IsPaneOpen"
                                 Value="False" />
+                        <Setter Target="HamburgerButton.Visibility"
+                                Value="Collapsed"/>
                     </VisualState.Setters>
                 </VisualState>
 
@@ -67,11 +80,12 @@
                         <AdaptiveTrigger MinWindowWidth="0" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <!-- Collapse the SplitView pane into overlay mode -->
                         <Setter Target="MainSplitView.DisplayMode"
                                 Value="Overlay" />
                         <Setter Target="MainSplitView.IsPaneOpen"
                                 Value="False" />
+                        <Setter Target="HamburgerButton.Visibility"
+                                Value="Visible"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>

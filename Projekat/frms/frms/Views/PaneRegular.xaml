@@ -80,6 +80,21 @@
                            Foreground="White"
                            VerticalAlignment="Center"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Background="#2c6187">
+                <Button x:Name="LogoutButton"
+                        FontFamily="Segoe MDL2 Assets"
+                        Content="&#xE7E8;"
+                        Width="50"
+                        Height="50"
+                        Foreground="White"
+                        Background="Transparent"
+                        Click="LogoutButton_Click"/>
+                <TextBlock Text="Odjava"
+                           FontSize="18"
+                           Foreground="White"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

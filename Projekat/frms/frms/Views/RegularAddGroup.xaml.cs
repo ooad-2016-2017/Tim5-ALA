@@ -1,5 +1,4 @@
 ﻿using System;
-using frms.ViewModels;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,18 +20,17 @@ namespace frms.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AdminAddHalls : Page
+    public sealed partial class RegularAddGroup : Page
     {
-        public AdminAddHalls()
+        private String predmet;
+
+        public RegularAddGroup()
         {
             this.InitializeComponent();
-            DataContext = new SalaInputViewModel();
-
-
+            predmet = RegularManageGroups.OdabraniPredmet;
+            nazivPredmeta.Text = predmet;
         }
-        // alternativa za numericupdown
-
-        private void brojMjesta_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        private void DaLiJeInt_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
         {
             // clunky but eh
 
@@ -58,6 +56,5 @@ namespace frms.Views
         {
 
         }
-
     }
 }
