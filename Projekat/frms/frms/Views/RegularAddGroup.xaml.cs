@@ -26,7 +26,25 @@ namespace frms.Views
         {
             this.InitializeComponent();
         }
-        private void odustaninButton_Click(object sender, RoutedEventArgs e)
+        private void DaLiJeInt_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        {
+            // clunky but eh
+
+            try
+            {
+                Convert.ToInt32(sender.Text);
+            }
+            catch (Exception)
+            {
+                if (sender.Text != null)
+                {
+                    int len = sender.Text.Length - 1;
+                    sender.Text = sender.Text.Substring(0, len);
+                }
+            }
+
+        }
+        private void odustaniButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
