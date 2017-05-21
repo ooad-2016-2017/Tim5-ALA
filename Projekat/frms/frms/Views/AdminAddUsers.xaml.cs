@@ -28,7 +28,7 @@ namespace frms.Views
             this.InitializeComponent();
             DataContext = new KorisnikInputViewModel();
         }
-        private void odustaninButton_Click(object sender, RoutedEventArgs e)
+        private void odustaniButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -26,5 +26,34 @@ namespace frms.Views
         {
             this.InitializeComponent();
         }
+        private void PretragaBrojMjesta_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        {
+            // clunky but eh
+
+            try
+            {
+                Convert.ToInt32(sender.Text);
+            }
+            catch (Exception)
+            {
+                if (sender.Text != null)
+                {
+                    int len = sender.Text.Length - 1;
+                    sender.Text = sender.Text.Substring(0, len);
+                }
+            }
+
+        }
+
+        private void ButtonPretraga_Click(object sender, RoutedEventArgs e)
+        {
+            // search, obviously
+        }
+
+        private void SaleRezultat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            // vodi na dijalog za rezervisanje 
+        }
     }
+
 }
