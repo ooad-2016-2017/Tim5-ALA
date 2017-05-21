@@ -25,7 +25,7 @@ namespace frms.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Login : Page
+    public sealed partial class Login : Page, INavigationService
     {
         private MainPage mainPage
         {
@@ -39,30 +39,18 @@ namespace frms.Views
         public Login()
         {
             this.InitializeComponent();
-            DataContext = new LoginViewModel();
+            Context.NavigationService = this;
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            //LoginPanel.IsEnabled = false;
-            string user = Username.Text;
-            string pass = Utility.SHA512(Password.Password);
-            
-            using (var db = new FakultetDataSource())
-            {
-                var dbUser = db.Korisnici.FirstOrDefault(v => v.PasswordHash == pass && v.Username == user);
 
-                if ( dbUser == null )
-                {
-                    //login fail
-                } else if ( dbUser is Administrator )
-                {
-                    mainPage.NavigatePane(typeof(Views.PaneAdmin));
-                } else
-                {
-                    mainPage.NavigatePane(typeof(Views.PaneRegular));
-                }
-            }
+        }
+
+
+        public void Navigate(Type sourcePage)
+        {
+            mainPage.NavigatePane(sourcePage);
         }
     }
 }

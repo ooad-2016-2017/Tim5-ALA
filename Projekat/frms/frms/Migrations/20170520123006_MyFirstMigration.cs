@@ -153,6 +153,8 @@ namespace frms.Migrations
                 name: "IX_Zahtjevi_PodnosilacID",
                 table: "Zahtjevi",
                 column: "PodnosilacID");
+
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
