@@ -1,5 +1,6 @@
 ﻿using frms.DataAccessLayer;
 using frms.Helper;
+using frms.Models;
 using frms.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,7 @@ namespace frms.Views
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            //LoginPanel.IsEnabled = false;
             string user = Username.Text;
             string pass = Utility.SHA512(Password.Password);
             
@@ -53,6 +55,12 @@ namespace frms.Views
                 if ( dbUser == null )
                 {
                     //login fail
+                } else if ( dbUser is Administrator )
+                {
+                    mainPage.NavigatePane(typeof(Views.PaneAdmin));
+                } else
+                {
+                    mainPage.NavigatePane(typeof(Views.PaneRegular));
                 }
             }
         }

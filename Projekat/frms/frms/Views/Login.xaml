@@ -12,7 +12,7 @@
           HorizontalAlignment="Right"
           VerticalAlignment="Center" Width="274">
 
-        <StackPanel>
+        <StackPanel x:Name="LoginPanel">
             <TextBox x:Name="Username" 
                      PlaceholderText="Username" 
                      AutomationProperties.IsRequiredForForm="True"/>
