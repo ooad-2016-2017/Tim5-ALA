@@ -15,7 +15,9 @@
                    DisplayMode="CompactInline"
                    PaneBackground="#2c6187">
             <SplitView.Pane>
-                <Frame x:Name="aktivniPane"/>
+                <StackPanel x:Name="dummy">
+                    <Frame x:Name="aktivniPane"/>
+                </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid>

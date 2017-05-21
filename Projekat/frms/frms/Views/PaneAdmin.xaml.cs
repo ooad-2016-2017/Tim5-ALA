@@ -67,5 +67,10 @@ namespace frms.Views
                 mainPage.ShowPane();
             }
         }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainPage.Logout();
+        }
     }
 }

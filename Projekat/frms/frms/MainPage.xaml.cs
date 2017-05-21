@@ -82,5 +82,13 @@ namespace frms
                 ShowPane();
             }
         }
+
+        public void Logout()
+        {
+            // -__-
+            aktivniPane.Navigate(typeof(Views.PaneBlank));
+            aktivnaStranica.Navigate(typeof(Views.Login));
+        }
+
     }
 }
