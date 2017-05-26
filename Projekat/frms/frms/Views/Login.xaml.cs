@@ -51,6 +51,15 @@ namespace frms.Views
         public void Navigate(Type sourcePage)
         {
             mainPage.NavigatePane(sourcePage);
+
+            if(sourcePage.Name == "PaneAdmin")
+            {
+                mainPage.Navigate(typeof(Views.AdminRequests));
+            }
+            else
+            {
+                mainPage.Navigate(typeof(Views.RegularManageGroups));
+            }
         }
     }
 }

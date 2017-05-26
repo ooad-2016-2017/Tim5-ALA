@@ -26,7 +26,7 @@ namespace frms.ViewModels
             {
                 if (db.Korisnici.Count() == 0)
                     db.Korisnici.Add(new Administrator() { Ime = "admin", PasswordHash = Utility.SHA512("admin"), Username = "admin", Prezime = "admin" });
-
+                
                 db.SaveChanges();
             }
 

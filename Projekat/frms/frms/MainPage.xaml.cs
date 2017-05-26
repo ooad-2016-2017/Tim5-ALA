@@ -23,10 +23,6 @@ namespace frms
     public sealed partial class MainPage : Page
     {
         private double normalCompactPaneLength;
-        
-        // mainpage je okvir za cijelu aplikaciju, pane treba sakriti samo kada je login forma aktivna
-        // a adaptivni triggeri svakako prikažu pane kad se resize uradi (sa prethodnom verzijom)
-        // => riješila sam sve na drugi način xD
 
         public MainPage()
         {
@@ -38,6 +34,7 @@ namespace frms
         public void Navigate(Type sourcePageType)
         {
             aktivnaStranica.Navigate(sourcePageType);
+            HidePane();
         }
 
         public void NavigatePane(Type sourcePageType)
