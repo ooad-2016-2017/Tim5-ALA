@@ -26,18 +26,12 @@ namespace frms.Views
         public RegularUpdateShedule()
         {
             this.InitializeComponent();
-
             DataContext = new RasporedInputViewModel();
         }
 
-        private void ClearScheduleButton_Click(object sender, RoutedEventArgs e)
+        private void Schedule_SelectedDatesChanged(CalendarView sender, CalendarViewSelectedDatesChangedEventArgs args)
         {
-
-        }
-
-        private void ManageTasksButton_Click(object sender, RoutedEventArgs e)
-        {
-
+            // dobaviti detalje o eventima taj dan i ubaciti u listview hronološki
         }
     }
 }

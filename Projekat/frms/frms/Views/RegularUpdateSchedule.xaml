@@ -8,24 +8,39 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
+        <StackPanel 
+            x:Name="mainStackPanel"
+            Orientation="Horizontal">
             <!-- Dodati tabelu (responzivnu) sa rasporedom pod nazivom Schedule, CalendarView ispod služi kao placeholder -->
-            <CalendarView x:Name="Schedule"/>
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="ClearScheduleButton"
-                        Margin="15"
-                        Width="150"
-                        Height="35"
-                        Content="Clear schedule"
-                        Click="ClearScheduleButton_Click"/>
-                <Button x:Name="ManageTasksButton"
-                        Margin="15"
-                        Width="150"
-                        Height="35"
-                        Content="Manage tasks"
-                        Click="ManageTasksButton_Click"/>
-            </StackPanel>
-            
+            <CalendarView x:Name="Schedule"
+                          Margin="15"
+                          SelectedDatesChanged="Schedule_SelectedDatesChanged"/>
+            <ListView x:Name="Tasks"
+                      Margin="15"/>
         </StackPanel>
     </Grid>
+
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="DesktopAndTablet">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="641"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="mainStackPanel.Orientation"
+                            Value="Horizontal"/>
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="Mobile">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="0"/>
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Target="mainStackPanel.Orientation"
+                            Value="Vertical"/>
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
 </Page>

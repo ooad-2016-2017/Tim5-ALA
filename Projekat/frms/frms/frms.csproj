@@ -141,15 +141,6 @@
     <Compile Include="Views\AdminSearchHalls.xaml.cs">
       <DependentUpon>AdminSearchHalls.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DodajSalu.xaml.cs">
-      <DependentUpon>DodajSalu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DodajKorisnika.xaml.cs">
-      <DependentUpon>DodajKorisnika.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\KreirajGrupu.xaml.cs">
-      <DependentUpon>KreirajGrupu.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -219,18 +210,6 @@
     <Page Include="Views\AdminSearchHalls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DodajSalu.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\DodajKorisnika.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\KreirajGrupu.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Login.xaml">
       <SubType>Designer</SubType>
