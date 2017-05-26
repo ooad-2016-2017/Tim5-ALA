@@ -29,6 +29,7 @@ namespace frms.Views
             DataContext = new SalaInputViewModel();
 
 
+
         }
         // alternativa za numericupdown
 
