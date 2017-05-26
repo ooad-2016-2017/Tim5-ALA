@@ -20,7 +20,7 @@ namespace frms.DataAccessLayer
             scanner = ProximityDevice.GetDefault(); 
 
             if(scanner != null)
-            {
+           { 
                 scanner.DeviceArrived += ProximityDeviceArrived;
                 scanner.DeviceDeparted += ProximityDeviceDeparted;
                 _messageSubscribeId = scanner.SubscribeForMessage("NDEF", ReadTag);
