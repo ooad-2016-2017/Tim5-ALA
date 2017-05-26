@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -23,12 +24,14 @@ namespace frms
     public sealed partial class MainPage : Page
     {
         private double normalCompactPaneLength;
+        private DataAccessLayer.Rfid scanner;
 
         public MainPage()
         {
             this.InitializeComponent();
             this.normalCompactPaneLength = MainSplitView.CompactPaneLength;
             aktivnaStranica.Navigate(typeof(Views.Login));
+            scanner = new DataAccessLayer.Rfid();
         }
 
         public void Navigate(Type sourcePageType)
@@ -85,6 +88,12 @@ namespace frms
             // -__-
             aktivniPane.Navigate(typeof(Views.PaneBlank));
             aktivnaStranica.Navigate(typeof(Views.Login));
+        }
+
+        public static async void ShowDialog(string message, string title)
+        {
+            MessageDialog temp = new MessageDialog(message, title);
+            await temp.ShowAsync();
         }
 
     }
