@@ -23,6 +23,15 @@ namespace frms.Views
     public sealed partial class RegularAddGroup : Page
     {
         private String predmet;
+        private MainPage mainPage
+        {
+            get
+            {
+                var rootFrame = Window.Current.Content as Frame;
+                return rootFrame.Content as MainPage;
+            }
+        }
+
 
         public RegularAddGroup()
         {
@@ -50,7 +59,7 @@ namespace frms.Views
         }
         private void odustaniButton_Click(object sender, RoutedEventArgs e)
         {
-
+            mainPage.Navigate(typeof(RegularManageGroups));
         }
         private void sacuvajButton_Click(object sender, RoutedEventArgs e)
         {
