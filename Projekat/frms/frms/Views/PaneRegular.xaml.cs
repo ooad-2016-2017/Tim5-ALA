@@ -39,7 +39,7 @@ namespace frms.Views
 
         private void UpdateScheduleButton_Click(object sender, RoutedEventArgs e)
         {
-            mainPage.Navigate(typeof(Views.RegularUpdateShedule));
+            mainPage.Navigate(typeof(Views.RegularUpdateSchedule));
         }
 
         private void ManageGroupsButton_Click(object sender, RoutedEventArgs e)

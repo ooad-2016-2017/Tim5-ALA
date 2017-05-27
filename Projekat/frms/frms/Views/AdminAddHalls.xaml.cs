@@ -27,9 +27,6 @@ namespace frms.Views
         {
             this.InitializeComponent();
             DataContext = new SalaInputViewModel();
-
-
-
         }
         // alternativa za numericupdown
 

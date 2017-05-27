@@ -6,7 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModels="using:frms.ViewModels"
     x:Class="frms.Views.Login"
-    mc:Ignorable="d" Background="White" Foreground="Black">
+    mc:Ignorable="d" Background="White" Foreground="Black"
+    Loaded="Page_Loaded">
     <Page.DataContext>
         <ViewModels:LoginViewModel x:Name="Context" />
     </Page.DataContext>
@@ -19,18 +20,22 @@
         <StackPanel x:Name="LoginPanel">
             <TextBox x:Name="Username" 
                      PlaceholderText="Username" 
-                     AutomationProperties.IsRequiredForForm="True" Text="{Binding Username, Mode=TwoWay}"/>
+                     AutomationProperties.IsRequiredForForm="True" 
+                     Text="{Binding Username, Mode=TwoWay}"
+                     TextChanging="Username_TextChanging"/>
             <PasswordBox x:Name="Password" 
                          PlaceholderText="Password" 
                          Margin="0,10,0,0" 
-                         AutomationProperties.IsRequiredForForm="True" Password="{Binding Password, Mode=TwoWay}"/>
+                         AutomationProperties.IsRequiredForForm="True" 
+                         Password="{Binding Password, Mode=TwoWay}"/>
             <Button x:Name="LoginButton"
                     Margin="15,15,0,15"
                     HorizontalAlignment="Right" 
                     Width="72"
                     Height="35"
                     Content="Log in"
-                    Click="LoginButton_Click" Command="{Binding Potvrda}"/>
+                    Click="LoginButton_Click" 
+                    Command="{Binding Potvrda}"/>
         </StackPanel>
 
     </Grid>

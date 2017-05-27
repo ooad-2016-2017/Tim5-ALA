@@ -24,14 +24,12 @@ namespace frms
     public sealed partial class MainPage : Page
     {
         private double normalCompactPaneLength;
-        private DataAccessLayer.Rfid scanner;
 
         public MainPage()
         {
             this.InitializeComponent();
             this.normalCompactPaneLength = MainSplitView.CompactPaneLength;
             aktivnaStranica.Navigate(typeof(Views.Login));
-            scanner = new DataAccessLayer.Rfid();
         }
 
         public void Navigate(Type sourcePageType)

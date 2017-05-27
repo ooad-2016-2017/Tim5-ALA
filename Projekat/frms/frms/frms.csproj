@@ -95,7 +95,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataAccessLayer\Rfid.cs" />
     <Compile Include="Helper\FormDataValidator.cs" />
     <Compile Include="Helper\INavigationService.cs" />
     <Compile Include="Helper\RelayCommand.cs" />

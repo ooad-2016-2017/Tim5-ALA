@@ -58,7 +58,32 @@ namespace frms.Views
             }
             else
             {
-                mainPage.Navigate(typeof(Views.RegularManageGroups));
+                mainPage.Navigate(typeof(Views.RegularUpdateSchedule));
+            }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            FocusManager.TryMoveFocus(FocusNavigationDirection.Next);
+        }
+
+
+        // za početak, hardkodirano
+        private void Username_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
+        {
+            if(sender.Text == "0")
+            {
+                // nekako sakriti ono što se unosi                
+            }
+
+            else if(sender.Text == "0009912295")
+            {
+                Navigate(typeof(PaneAdmin));
+            }
+
+            else if(sender.Text == "0009910712")
+            {
+                Navigate(typeof(PaneRegular));
             }
         }
     }
