@@ -10,6 +10,6 @@ namespace frms.Models
     {
         public Korisnik OdgovorniLaborant { get; set; }
 
-        public List<Osobina> DodatneOsobine { get; set; }
+        public List<Osobina> DodatneOsobine { get; set; } = new List<Osobina>();
     }
 }

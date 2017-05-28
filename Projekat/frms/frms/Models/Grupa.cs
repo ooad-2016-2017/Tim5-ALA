@@ -13,6 +13,6 @@ namespace frms.Models
         public int ID { get; set; }
 
         public string Naziv { get; set; }
-        public List<Student> Studenti { get; set; }
+        public List<Student> Studenti { get; set; } = new List<Student>();
     }
 }
