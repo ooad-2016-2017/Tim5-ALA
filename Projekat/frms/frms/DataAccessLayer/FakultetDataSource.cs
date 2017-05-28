@@ -21,8 +21,9 @@ namespace frms.DataAccessLayer
         public DbSet<Grupa> Grupe { get; set; }
         public DbSet<Sala> Sale { get; set; }
         public DbSet<Laboratorij> Laboratoriji { get; set; }
-        public DbSet<Zahtjev> Zahtjevi { get; set; }
-         
+        public DbSet<Zahtjev> Zahtjevi { get; set;}
+        public DbSet<Termin> Termini { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=" + DbPath);
