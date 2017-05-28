@@ -36,6 +36,7 @@ namespace frms
             using (var db = new FakultetDataSource())
             {
                 db.Database.Migrate();
+                db.SaveChanges();
             }
         }
 

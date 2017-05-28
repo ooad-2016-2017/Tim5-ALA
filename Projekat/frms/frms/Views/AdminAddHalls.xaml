@@ -1,16 +1,20 @@
 ﻿<Page
-    x:Class="frms.Views.AdminAddHalls"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:frms.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModels="using:frms.ViewModels"
+    x:Class="frms.Views.AdminAddHalls"
     mc:Ignorable="d">
+
+    <Page.DataContext>
+        <ViewModels:SalaInputViewModel x:Name="Context"/>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ScrollViewer HorizontalScrollBarVisibility="Auto"
-                      VerticalScrollBarVisibility="Auto"
-            Height="{Binding ElementName=MainStackPanel, Path=ActualHeight}">
+                      VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <StackPanel  x:Name="MainStackPanel" Orientation="Vertical" Margin="20,50,20,50">
                     <StackPanel Orientation="Horizontal" Margin="15">
@@ -18,61 +22,75 @@
                            Margin="15"                         
                            Text="Naziv Sale:"
                            Height="20"
-                           Width="100"/>
-                    <TextBox x:Name="nazivSale"
+                           Width="180"/>
+                        <TextBox x:Name="nazivSale"
                          Width="150"
-                         Height="30"/>
-                </StackPanel>
+                         Height="30" Text="{Binding Sala.Naziv, Mode=TwoWay}"/>
+                    </StackPanel>
 
-                <StackPanel Orientation="Vertical" Margin="15">
+                    <StackPanel Orientation="Vertical" Margin="15">
 
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Broj Mjesta:" 
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Broj Mjesta:" 
                                Margin="15"
-                               Width="100"/>
-                        <TextBox x:Name="brojMjesta"
+                               Width="180"/>
+                            <TextBox x:Name="brojMjesta"
                              TextChanging="brojMjesta_TextChanging"
                             Height="30"
                              Margin="15"
-                              Width="100"/>
+                              Width="100" Text="{Binding Sala.BrojMjesta, Mode=TwoWay}"/>
 
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Broj Racunara:" 
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Sala je laboratorij:" 
                                Margin="15"
-                               Width="100"/>
-                        <TextBox x:Name="brojRacunara"
+                               Width="180"/>
+                            <CheckBox x:Name="cbIsLab"
+                            Height="30"
+                             Margin="15"
+                              Width="100" IsChecked="{Binding IsLab, Mode=TwoWay}" />
+
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal" Visibility="{Binding IsLabVisible}">
+                            <TextBlock Text="Broj Racunara:" 
+                               Margin="15"
+                               Width="180"/>
+                            <TextBox x:Name="brojRacunara"
                              Height="30" 
                              Margin="15"
                               Width="100"
                              TextChanging="brojMjesta_TextChanging"/>
 
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="15">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Dodatne Specifikacije:" 
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="15" Visibility="{Binding IsLabVisible, Mode=OneWay}">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Dodatne Specifikacije:" 
                              
                                TextWrapping="Wrap"/>
-                            <StackPanel Orientation="Horizontal" Margin="10">
-                                <TextBlock Text="Android platforma" Width="150"/>
-                                <CheckBox x:Name="androidPlatforma"  Margin="50, 0,0,0"/>
+                                <StackPanel Orientation="Horizontal" Margin="10">
+                                    <TextBlock Text="Android dev kit" Width="150"/>
+                                    <CheckBox x:Name="androidPlatforma"  Margin="50, 0,0,0"/>
 
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="10">
-                                <TextBlock Text="C++ platforma" Width="150"/>
-                                <CheckBox x:Name="CPlatforma" Margin="50, 0,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10">
+                                    <TextBlock Text="C++ dev kit" Width="150"/>
+                                    <CheckBox x:Name="CPlatforma" Margin="50, 0,0,0"/>
 
+                                </StackPanel>
                             </StackPanel>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="20">
+                            <Button x:Name="odustaniButton" Content="Odustani" Margin=" 10" Width="100"/>
+                            <Button x:Name="sacuvajButton" Content="Sacuvaj" Margin="10" Width="100" Command="{Binding Potvrda}"/>
                         </StackPanel>
 
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="20">
-                        <Button x:Name="odustaniButton" Content="Odustani" Margin=" 10" Width="100"/>
-                        <Button x:Name="sacuvajButton" Content="Sacuvaj" Margin="10" Width="100"/>
-                    </StackPanel>
-
                 </StackPanel>
-            </StackPanel>
             </StackPanel>
         </ScrollViewer>
 
