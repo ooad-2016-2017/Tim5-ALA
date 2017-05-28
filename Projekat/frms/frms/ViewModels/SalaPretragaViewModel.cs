@@ -1,4 +1,7 @@
-﻿using System;
+﻿using frms.DataAccessLayer;
+using frms.Helper;
+using frms.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +14,24 @@ namespace frms.ViewModels
     {
         public ICommand Potvrda { get; set; }
 
-        public string Pretraga { get; set; }
+        public DateTime PretragaVrijeme { get; set; } = DateTime.Now;
+
+        public bool PretragaPoTerminu { get; set; } = true;
+        public string PretragaBrojMjesta { get; set; } = "";
+
+        public List<Sala> PronadjeneSale { get; set; } = new List<Sala>();
+
+        public SalaPretragaViewModel()
+        {
+
+            Potvrda = new RelayCommand<object>(doSearch, param => true);
+        }
+
+
+        private void doSearch(object param)
+        {
+            PronadjeneSale.Clear();
+            PronadjeneSale.AddRange(Sala.DajSlobodneSale(PretragaPoTerminu ? PretragaVrijeme : DateTime.Now, int.Parse(PretragaBrojMjesta)));
+        }
     }
 }

@@ -54,6 +54,28 @@ namespace frms.Views
         {
             // vodi na dijalog za rezervisanje 
         }
+
+        private void updateTime()
+        {
+            int yr = PretragaDatum.Date.Year;
+            int mn = PretragaDatum.Date.Month;
+            int day = PretragaDatum.Date.Day;
+            int hr = PretragaVrijeme.Time.Hours;
+            int minute = PretragaVrijeme.Time.Minutes;
+            int sec = PretragaVrijeme.Time.Seconds;
+
+            Context.PretragaVrijeme = new DateTime(yr, mn, day, hr, minute, sec);
+        }
+
+        private void PretragaDatum_DateChanged(object sender, DatePickerValueChangedEventArgs e)
+        {
+            updateTime();
+        }
+
+        private void PretragaVrijeme_TimeChanged(object sender, TimePickerValueChangedEventArgs e)
+        {
+            updateTime();
+        }
     }
 
 }

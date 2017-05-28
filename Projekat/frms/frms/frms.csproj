@@ -106,6 +106,10 @@
     <Compile Include="Migrations\20170520123006_MyFirstMigration.designer.cs">
       <DependentUpon>20170520123006_MyFirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170528173340_DBUpdate.cs" />
+    <Compile Include="Migrations\20170528173340_DBUpdate.designer.cs">
+      <DependentUpon>20170528173340_DBUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\FakultetDataSourceModelSnapshot.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="DataAccessLayer\FakultetDataSource.cs" />

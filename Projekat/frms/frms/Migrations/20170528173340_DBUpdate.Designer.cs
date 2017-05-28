@@ -8,9 +8,10 @@ using frms.DataAccessLayer;
 namespace frms.Migrations
 {
     [DbContext(typeof(FakultetDataSource))]
-    partial class FakultetDataSourceModelSnapshot : ModelSnapshot
+    [Migration("20170528173340_DBUpdate")]
+    partial class DBUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");

@@ -1,38 +1,45 @@
 ﻿<Page
-    x:Class="frms.Views.AdminSearchHalls"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:frms.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModels="using:frms.ViewModels"
+    x:Class="frms.Views.AdminSearchHalls"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <ViewModels:SalaPretragaViewModel x:Name="Context"/>
+    </Page.DataContext>
+    
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <StackPanel Orientation="Horizontal">
+            
             <StackPanel>
                 <StackPanel>
                     <StackPanel Margin="10">
                         <TextBlock Text="Termin:"
                            Margin="5"/>
                         <DatePicker x:Name="PretragaDatum"
-                            Margin="5"/>
+                            Margin="5" Width="300" DataContext="{Binding PretragaDatum, Mode=TwoWay}" DateChanged="PretragaDatum_DateChanged"/>
                         <TimePicker x:Name="PretragaVrijeme"
-                            Margin="5"/>
+                            Margin="5" Width="300" DataContext="{Binding PretragaVrijeme, Mode=TwoWay}" TimeChanged="PretragaVrijeme_TimeChanged"/>
 
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Pretraži po terminu: "
-                               Margin="5"/>
-                            <ToggleSwitch x:Name="PretraziPoTerminu"/>
+                               Margin="5" Width="142"/>
+                            <ToggleSwitch x:Name="PretraziPoTerminu" Width="105" IsOn="{Binding PretragaPoTerminu, Mode=TwoWay}"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Broj mjesta:"
-                               Margin="5"/>
+                               Margin="5" Width="179"/>
                             <TextBox x:Name="PretragaBrojMjesta"
                              Margin="5"
-                             Width="50"
-                             TextChanging="PretragaBrojMjesta_TextChanging"/>
+                             Width="106"
+                             TextChanging="PretragaBrojMjesta_TextChanging" Text="{Binding PretragaBrojMjesta, Mode=TwoWay}"/>
                         </StackPanel>
 
                     </StackPanel>
@@ -43,7 +50,7 @@
                         Width="150"
                         Height="35"
                         Content="Pretraga"
-                        Click="ButtonPretraga_Click"/>
+                        Click="ButtonPretraga_Click" Command="{Binding Potvrda}"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
@@ -51,7 +58,7 @@
                 <!-- ovdje idu rezultati pretrage -->
                 <ListView x:Name="SaleRezultat"
                           Margin="10"
-                          ItemClick="SaleRezultat_ItemClick"/>
+                          ItemClick="SaleRezultat_ItemClick" ItemsSource="{Binding PronadjeneSale}"/>
             </StackPanel>
         </StackPanel>
     </Grid>
