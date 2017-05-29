@@ -42,5 +42,10 @@ namespace frms.Views
         {
 
         }
+
+        private void DatumPocetka_DateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
+        {
+            DatumZavrsetka.Date = DatumPocetka.Date;
+        }
     }
 }

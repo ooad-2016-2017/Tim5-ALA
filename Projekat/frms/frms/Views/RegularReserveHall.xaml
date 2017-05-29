@@ -17,18 +17,18 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Predmet: "
-                                   Margin="15"
+                                   Margin="10"
                                    Width="100"/>
                             <ComboBox x:Name="ComboBoxPredmeti"
-                                  Margin="15"
+                                  Margin="10"
                                   Width="150"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Dan: "
-                                   Margin="15"
+                                   Margin="10"
                                    Width="100"/>
                             <ComboBox x:Name="ComboBoxDani"
-                                  Margin="15"
+                                  Margin="10"
                                   Width="150">
                                 <ComboBoxItem>
                                     <TextBlock>Ponedjeljak</TextBlock>
@@ -55,10 +55,10 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Ponavljaj: "
-                                   Margin="15"
+                                   Margin="10"
                                    Width="100"/>
                             <ComboBox x:Name="ComboBoxPonavljaj"
-                                  Margin="15"
+                                  Margin="10"
                                   Width="150">
                                 <ComboBoxItem>
                                     <TextBlock>Nikad</TextBlock>
@@ -74,39 +74,41 @@
                                 </ComboBoxItem>
                             </ComboBox>
                         </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="ButtonOtkazi"
+                                Margin="5"
+                                Width="120"
+                                Height="35"
+                                Content="Otkaži"
+                                Click="ButtonOtkazi_Click"/>
+                            <Button x:Name="ButtonPretraga"
+                                Margin="5"
+                                Width="120"
+                                Height="35"
+                                Content="Pretraga"
+                                Click="ButtonPretraga_Click"/>
+                        </StackPanel>
                     </StackPanel>
-                    <StackPanel Margin="10">
+                    <StackPanel Margin="5">
                         <StackPanel>
                             <TextBlock Text="Počinje:"
                                    Margin="5"/>
                             <TimePicker x:Name="TimePickerStart"
-                                    Margin="5"/>
+                                        Margin="5" 
+                                        ClockIdentifier="24HourClock"/>
                             <CalendarDatePicker x:Name="DatumPocetka"
-                                            Margin="5"/>
+                                                Margin="5"
+                                                DateChanged="DatumPocetka_DateChanged"/>
                         </StackPanel>
                         <StackPanel>
                             <TextBlock Text="Završava:"
                                        Margin="5"/>
                             <TimePicker x:Name="TimePickerEnd"
-                                        Margin="5"/>
+                                        Margin="5" ClockIdentifier="24HourClock"/>
                             <CalendarDatePicker x:Name="DatumZavrsetka"
                                                 Margin="5"/>
                         </StackPanel>
                     </StackPanel>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="ButtonOtkazi"
-                                Margin="15"
-                                Width="120"
-                                Height="35"
-                                Content="Otkaži"
-                                Click="ButtonOtkazi_Click"/>
-                    <Button x:Name="ButtonPretraga"
-                                Margin="15"
-                                Width="120"
-                                Height="35"
-                                Content="Pretraga"
-                                Click="ButtonPretraga_Click"/>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

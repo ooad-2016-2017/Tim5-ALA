@@ -76,12 +76,12 @@ namespace frms.Views
                 // nekako sakriti ono što se unosi                
             }
 
-            else if(sender.Text == "0009912295")
+            else if(Helper.FormDataValidator.KarticaAdmin(sender.Text))
             {
                 Navigate(typeof(PaneAdmin));
             }
 
-            else if(sender.Text == "0009910712")
+            else if(Helper.FormDataValidator.KarticaRegular(sender.Text))
             {
                 Navigate(typeof(PaneRegular));
             }
