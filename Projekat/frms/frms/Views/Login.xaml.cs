@@ -1,7 +1,4 @@
-﻿using frms.DataAccessLayer;
-using frms.Helper;
-using frms.Models;
-using frms.ViewModels;
+﻿using frms.Helper;
 using System;
 using System.Collections.Generic;
 using System.IO;
