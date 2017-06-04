@@ -28,7 +28,7 @@ namespace frms.Views
             this.InitializeComponent();
             DataContext = new RasporedInputViewModel();
         }
-
+        
         private void Schedule_SelectedDatesChanged(CalendarView sender, CalendarViewSelectedDatesChangedEventArgs args)
         {
             // dobaviti detalje o eventima taj dan i ubaciti u listview hronološki

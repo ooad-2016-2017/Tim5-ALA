@@ -7,14 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frms", "frms\frms.csproj", 
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Debug|ARM.ActiveCfg = Debug|ARM
 		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Debug|ARM.Build.0 = Debug|ARM
 		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Debug|ARM.Deploy.0 = Debug|ARM
@@ -24,6 +27,7 @@ Global
 		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Debug|x86.ActiveCfg = Debug|x86
 		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Debug|x86.Build.0 = Debug|x86
 		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Debug|x86.Deploy.0 = Debug|x86
+		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Release|Any CPU.ActiveCfg = Release|x86
 		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Release|ARM.ActiveCfg = Release|ARM
 		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Release|ARM.Build.0 = Release|ARM
 		{8D84D1E8-211C-42B7-8F93-86EDD99C10BF}.Release|ARM.Deploy.0 = Release|ARM
