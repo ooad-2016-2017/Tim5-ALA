@@ -45,11 +45,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PlayAgain.cs" />
+     <Compile Include="Assets\Scripts\DialogText.cs" />
+     <Compile Include="Assets\Scripts\EndGameScene.cs" />
      <Compile Include="Assets\Scripts\FollowTransform.cs" />
      <Compile Include="Assets\Scripts\GameCamera.cs" />
+     <Compile Include="Assets\Scripts\GameTimer.cs" />
+     <Compile Include="Assets\Scripts\Grounding.cs" />
      <Compile Include="Assets\Scripts\LevelGenerator.cs" />
-     <Compile Include="Assets\Scripts\Player\Grounding.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
+     <Compile Include="Assets\obstacles\Obstacle.cs" />
+     <Compile Include="Assets\obstacles\ObstacleSpawner.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

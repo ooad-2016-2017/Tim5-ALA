@@ -16,7 +16,6 @@ public class LevelGenerator : MonoBehaviour {
 
     public void OnTriggerExit2D(Collider2D col)
     {
-        Debug.Log("OnTriggerExit2D");
         if (col.tag != "Terrain") return;
 
         col.transform.position += Vector3.right * deltaPosition;

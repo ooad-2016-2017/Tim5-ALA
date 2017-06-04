@@ -8,7 +8,9 @@ public class GameCamera : MonoBehaviour {
     public float moveSpeed = 100;
 
     public Vector3 positionOffset;
-    
+
+    public float positionZ = -500;
+    public float positionY = 0;
 
     // Use this for initialization
     void Start () {
@@ -20,7 +22,7 @@ public class GameCamera : MonoBehaviour {
         if (player == null) return;
 
         {
-            Vector3 targetPos = new Vector3(player.transform.position.x, transform.position.y, transform.position.z) + positionOffset;
+            Vector3 targetPos = new Vector3(player.transform.position.x, positionY, positionZ) + positionOffset;
 
 
             Vector3 newPos = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * moveSpeed);
