@@ -102,15 +102,6 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20170520123006_MyFirstMigration.cs" />
-    <Compile Include="Migrations\20170520123006_MyFirstMigration.designer.cs">
-      <DependentUpon>20170520123006_MyFirstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20170528173340_DBUpdate.cs" />
-    <Compile Include="Migrations\20170528173340_DBUpdate.designer.cs">
-      <DependentUpon>20170528173340_DBUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\FakultetDataSourceModelSnapshot.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="DataAccessLayer\FakultetDataSource.cs" />
     <Compile Include="Models\Grupa.cs" />
@@ -252,7 +243,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

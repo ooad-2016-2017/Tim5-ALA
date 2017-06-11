@@ -18,29 +18,27 @@ namespace frms.Models
         public List<Termin> Termini { get; set; }
 
 
-        public static Raspored ZaGrupu(Grupa g)
+        public static async Task<Raspored> ZaGrupu(Grupa g)
         {
             Raspored raspored = null;
-            using (var db = new FakultetDataSource())
-            {
-                raspored = new Models.Raspored();
-                raspored.Termini = new List<Termin>();
-                raspored.Termini.AddRange(db.Termini.Where(termin => termin.Grupa.ID == g.ID));
-                raspored.Grupa = g;
-            }
+            var db = new FakultetDataSource();
+            raspored = new Raspored();
+            raspored.Termini = new List<Termin>();
+            raspored.Termini.AddRange((await db.Termini.ToListAsync()).Where(termin => termin.Grupa.ID == g.ID));
+            raspored.Grupa = g;
+            
             return raspored;
         }
 
-        public static Raspored ZaKorisnika(Korisnik k)
+        public static async Task<Raspored> ZaKorisnika(Korisnik k)
         {
             Raspored raspored = null;
-            using (var db = new FakultetDataSource())
-            {
-                raspored = new Models.Raspored();
-                raspored.Termini = new List<Termin>();
-                raspored.Termini.AddRange(db.Termini.Where(termin => termin.Predavac.ID == k.ID));
-                raspored.Korisnik = k;
-            }
+            var db = new FakultetDataSource();
+            raspored = new Raspored();
+            raspored.Termini = new List<Termin>();
+            raspored.Termini.AddRange((await db.Termini.ToListAsync()).Where(termin => termin.Predavac.ID == k.ID));
+            raspored.Korisnik = k;
+
             return raspored;
         }
        

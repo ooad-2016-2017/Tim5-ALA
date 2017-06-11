@@ -1,7 +1,4 @@
 ﻿using frms.Models;
-using Microsoft.EntityFrameworkCore;
-using SQLite.Net;
-using SQLite.Net.Platform.WinRT;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,44 +6,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace frms.DataAccessLayer
 {
-    class FakultetDataSource : DbContext
+    class FakultetDataSource
     {
-        private const string DbPath = "database.sqlite";
 
-
-        public DbSet<Korisnik> Korisnici { get; set; }
-        public DbSet<Grupa> Grupe { get; set; }
-        public DbSet<Sala> Sale { get; set; }
-        public DbSet<Laboratorij> Laboratoriji { get; set; }
-        public DbSet<Zahtjev> Zahtjevi { get; set;}
-        public DbSet<Termin> Termini { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source=" + DbPath);
-        }
+        public static MobileServiceClient MobileService = new
+            MobileServiceClient("https://frms.azurewebsites.net");
+        
+        public IMobileServiceTable<Korisnik> Korisnici { get; } = MobileService.GetTable<Korisnik>();
+        public IMobileServiceTable<Grupa> Grupe { get; } = MobileService.GetTable<Grupa>();
+        public IMobileServiceTable<Sala> Sale { get; } = MobileService.GetTable<Sala>();
+        public IMobileServiceTable<Laboratorij> Laboratoriji { get; } = MobileService.GetTable<Laboratorij>();
+        public IMobileServiceTable<Zahtjev> Zahtjevi { get; } = MobileService.GetTable<Zahtjev>();
+        public IMobileServiceTable<Termin> Termini { get; } = MobileService.GetTable<Termin>();
         
         
-        public Sala DajSaluById(int id) {
-            return Sale.FirstOrDefault(s => s.ID == id);
+        
+        public async Task<Sala> DajSaluById(string id)
+        {
+            var list = await Sale.Where(s => s.ID == id).ToListAsync();
+
+            return list.Count > 0 ? list[0] : null;
         }
 
-        public Korisnik DajKorisnikaById(int id)
+        public async Task<Korisnik> DajKorisnikaById(string id)
         {
-            return Korisnici.FirstOrDefault(s => s.ID == id);
+            var list = await Korisnici.Where(s => s.ID == id).ToListAsync();
+
+            return list.Count > 0 ? list[0] : null;
         }
 
-        public Grupa DajGrupuById(int id)
+        public async Task<Grupa> DajGrupuById(string id)
         {
-            return Grupe.FirstOrDefault(s => s.ID == id);
+            var list = await Grupe.Where(s => s.ID == id).ToListAsync();
+
+            return list.Count > 0 ? list[0] : null;
         }
 
-        public Zahtjev DajZahtjevById(int id)
+        public async Task<Zahtjev> DajZahtjevById(string id)
         {
-            return Zahtjevi.FirstOrDefault(s => s.ID == id);
+            var list = await Zahtjevi.Where(s => s.ID == id).ToListAsync();
+
+            return list.Count > 0 ? list[0] : null;
         }
 
         

@@ -20,15 +20,17 @@ namespace frms.ViewModels
 
         public INavigationService NavigationService { get; set; }
 
+        private async void setupAdmin()
+        {
+            var db = new FakultetDataSource();
+            if (!( await db.Korisnici.ToListAsync()).Any())
+                await db.Korisnici.InsertAsync(new Administrator() { Ime = "admin", PasswordHash = Utility.SHA512("admin"), Username = "admin", Prezime = "admin" });
+
+        }
+
         public LoginViewModel()
         {
-            using (var db = new FakultetDataSource())
-            {
-                if (db.Korisnici.Count() == 0)
-                    db.Korisnici.Add(new Administrator() { Ime = "admin", PasswordHash = Utility.SHA512("admin"), Username = "admin", Prezime = "admin" });
-                
-                db.SaveChanges();
-            }
+            setupAdmin();    
 
 
             Potvrda = new RelayCommand<object>(doLogin, param => true );
@@ -36,25 +38,24 @@ namespace frms.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void doLogin(object param)
+        private async void doLogin(object param)
         {
-            using (var db = new FakultetDataSource())
-            {
-                var dbUser = db.Korisnici.FirstOrDefault(v => v.PasswordHash == Utility.SHA512(Password) && v.Username == Username);
+            var db = new FakultetDataSource();
+            var dbUser = ( await db.Korisnici.ToListAsync()).FirstOrDefault(v => v.PasswordHash == Utility.SHA512(Password) && v.Username == Username);
 
-                if (dbUser == null)
-                {
-                    //login fail
-                }
-                else if (dbUser is Administrator)
-                {
-                    NavigationService.Navigate(typeof(Views.PaneAdmin));
-                }
-                else
-                {
-                    NavigationService.Navigate(typeof(Views.PaneRegular));
-                }
+            if (dbUser == null)
+            {
+                //login fail
             }
+            else if (dbUser is Administrator)
+            {
+                NavigationService.Navigate(typeof(Views.PaneAdmin));
+            }
+            else
+            {
+                NavigationService.Navigate(typeof(Views.PaneRegular));
+            }
+            
         }
     }
 }

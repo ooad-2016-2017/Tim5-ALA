@@ -28,13 +28,13 @@ namespace frms.ViewModels
         }
 
 
-        private void doSearch(object param)
+        private async void doSearch(object param)
         {
             int n = 0;
             int.TryParse(PretragaBrojMjesta, out n);
 
             PronadjeneSale.Clear();
-            PronadjeneSale.AddRange(Sala.DajSlobodneSale(PretragaPoTerminu ? PretragaVrijeme : DateTime.Now, n));
+            PronadjeneSale.AddRange(await Sala.DajSlobodneSale(PretragaPoTerminu ? PretragaVrijeme : DateTime.Now, n));
         }
     }
 }

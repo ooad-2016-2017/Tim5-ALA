@@ -1,5 +1,4 @@
 ﻿using frms.DataAccessLayer;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,12 +31,7 @@ namespace frms
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-
-            using (var db = new FakultetDataSource())
-            {
-                db.Database.Migrate();
-                db.SaveChanges();
-            }
+            
         }
 
         /// <summary>

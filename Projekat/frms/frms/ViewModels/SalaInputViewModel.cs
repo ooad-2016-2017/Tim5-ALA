@@ -71,15 +71,13 @@ namespace frms.ViewModels
                 // todo dodaj osobine ovdje, ako su oni checked
             }
 
-            using ( var db = new FakultetDataSource() )
-            {
-                if ( toSave is Sala )
-                    db.Sale.Add(toSave);
-                else
-                    db.Laboratoriji.Add((Laboratorij)toSave);
-
-                db.SaveChanges();
-            }
+            var db = new FakultetDataSource();
+            if ( toSave is Sala )
+                db.Sale.InsertAsync(toSave);
+            else
+                db.Laboratoriji.InsertAsync((Laboratorij)toSave);
+            
+            
         }
     }
 }
