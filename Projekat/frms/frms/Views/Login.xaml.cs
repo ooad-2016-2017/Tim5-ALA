@@ -64,8 +64,6 @@ namespace frms.Views
             FocusManager.TryMoveFocus(FocusNavigationDirection.Next);
         }
 
-
-        // za početak, hardkodirano
         private void Username_TextChanging(TextBox sender, TextBoxTextChangingEventArgs args)
         {
             if(sender.Text == "0")
