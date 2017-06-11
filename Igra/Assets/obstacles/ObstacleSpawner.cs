@@ -15,6 +15,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     public Vector3 spawnPosition;
 
+    public GameTimer gameTimer;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -31,11 +33,14 @@ public class ObstacleSpawner : MonoBehaviour
             new Vector3(player.position.x + spawnPosition.x, spawnPosition.y, spawnPosition.z),
             Quaternion.identity
         );
+
     }
 
 	// Update is called once per frame
 	void Update ()
 	{
+	    if (gameTimer.DistanceLeft < SpawnDistance * 2) return;
+
 	    if (player.position.x - lastSpawn > SpawnDistance)
 	    {
 	        lastSpawn = player.position.x;

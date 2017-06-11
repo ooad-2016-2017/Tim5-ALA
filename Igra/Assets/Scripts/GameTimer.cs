@@ -29,8 +29,16 @@ public class GameTimer : MonoBehaviour
 
 	    timeLeft = new DateTime(2017, 4, 6, 12, startMinutes, startSeconds);
 
+	    var pos = player.transform.position;
+	    pos.x = 0;
+	    player.transform.position = pos;
 	    kolega.position = player.transform.position + Vector3.right * distance;
 	}
+
+    public float DistanceLeft
+    {
+        get { return distance - player.transform.position.x; }
+    }
 
     private float lateTimer = 0;
 	// Update is called once per frame
@@ -58,6 +66,6 @@ public class GameTimer : MonoBehaviour
 	    }
         
 
-        text.text = String.Format(prefix, t, distance - player.transform.position.x );
+        text.text = String.Format(prefix, t, DistanceLeft);
 	}
 }

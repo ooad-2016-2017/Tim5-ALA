@@ -1,7 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{63C88595-76E5-B846-3FC8-9C7BDA57B801}") = "Igra", "Assembly-CSharp.csproj", "{E8206385-C269-3103-B0F2-327332904753}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Igra", "Igra.csproj", "{AB3A7909-61BF-2D77-3411-36D49BAE0F93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E8206385-C269-3103-B0F2-327332904753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8206385-C269-3103-B0F2-327332904753}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8206385-C269-3103-B0F2-327332904753}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8206385-C269-3103-B0F2-327332904753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3A7909-61BF-2D77-3411-36D49BAE0F93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3A7909-61BF-2D77-3411-36D49BAE0F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3A7909-61BF-2D77-3411-36D49BAE0F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3A7909-61BF-2D77-3411-36D49BAE0F93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

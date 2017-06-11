@@ -21,5 +21,13 @@ public class Obstacle : MonoBehaviour {
         {
             player.Die();
         }
+
+        if (other.transform.tag == "Obstacle")
+        {
+            var moveHoriz = GetComponent<ObstacleMoveHoriz>();
+
+            if (moveHoriz != null)
+                Destroy(gameObject);
+        }
     }
 }
