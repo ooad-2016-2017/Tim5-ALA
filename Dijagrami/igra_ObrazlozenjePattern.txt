@@ -1,0 +1,19 @@
+U igri je iskoristen vise puta TemplateMethod pattern, i to na lokacijama:
+
+
+- Player klasa ima atributa tipa IAnimationProvider. Instanca ove klase je zaduzena da animira igraca. 
+  Jedan primjer konkretne implementacije je AnimatorAnimProvider koja koristi Unity Animator da animira igraca.
+
+
+- Player klasa ima atributa tipa IGrounding. Instanca ove klase je zaduzena da nam na neki nacin daje informacije
+  o uzemljenju igraca. 
+
+  Jedan primjer konkretne implementacije je Grounding klasa koja koristi physics engine Unitya za provjeru da li
+  je igrac uzemljen ili ne.
+  
+  
+  
+Iskoristen je i Observer pattern u sklopu samih Unity komponenti pri izradi UIa.
+
+Za meni je u Button komponentama dodan OnClick za pocetak i kraj igre.
+
