@@ -8,9 +8,8 @@ public class Player : MonoBehaviour {
     public float jumpIntensity = 100;
     public float dieIntensity = 100;
 
-    public Grounding grounding;
-
-    public Animator animator;
+    public IGrounding grounding;
+    
 
     private bool isFalling = false;
     public int fallFrameCount = 3;
@@ -20,6 +19,8 @@ public class Player : MonoBehaviour {
     private Vector3 lastSamplePos = Vector3.zero;
 
     private bool isIdle = false;
+
+    public IAnimationProvider animProvider;
 
     public void GoIdle()
     {
@@ -67,8 +68,9 @@ public class Player : MonoBehaviour {
 	{
 	    if (isIdle)
 	    {
-	        animator.SetBool("idle", isIdle);
-	        return;
+	        animProvider.SetIdle(isIdle);
+
+            return;
 	    }
 
         #region Move
@@ -85,7 +87,7 @@ public class Player : MonoBehaviour {
         {
             if ( Input.GetKeyDown(KeyCode.Space) )
             {
-                animator.SetTrigger("jump");
+                animProvider.Jump();
                 Jump();
             }
             
@@ -94,7 +96,7 @@ public class Player : MonoBehaviour {
 
         updateFalling();
 
-        animator.SetBool("grounded", grounding.Grounded);
-        animator.SetBool("falling", isFalling);
+        animProvider.SetGrounded(grounding.Grounded);
+        animProvider.SetFalling(isFalling);
     }
 }

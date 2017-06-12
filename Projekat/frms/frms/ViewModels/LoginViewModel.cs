@@ -53,7 +53,8 @@ namespace frms.ViewModels
             }
             else
             {
-                NavigationService.Navigate(typeof(Views.PaneRegular));
+                //NavigationService.Navigate(typeof(Views.PaneRegular));
+                NavigationService.Navigate(typeof(Views.PaneAdmin));
             }
             
         }

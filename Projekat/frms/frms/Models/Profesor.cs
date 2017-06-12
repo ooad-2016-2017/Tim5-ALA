@@ -8,5 +8,6 @@ namespace frms.Models
 {
     class Profesor : Korisnik
     {
+        public new string ID { get; set; }
     }
 }

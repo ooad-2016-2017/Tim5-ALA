@@ -27,14 +27,7 @@ namespace frms.Views
         {
             this.InitializeComponent();
             DataContext = new KorisnikInputViewModel();
-            if (Helper.FormDataValidator.validacijaKorisnika(ImeKorisnika.Text.ToString(), PrezimeKorisnika.Text.ToString()))
-            {
-                sacuvajButton.IsEnabled = true;
-            }
-            else
-            {
-                sacuvajButton.IsEnabled = false;
-            }
+
         }
         private void odustaniButton_Click(object sender, RoutedEventArgs e)
         {

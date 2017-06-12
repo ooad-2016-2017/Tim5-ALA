@@ -8,5 +8,6 @@ namespace frms.Models
 {
     class Administrator : Korisnik
     {
+        public new string ID { get; set; }
     }
 }

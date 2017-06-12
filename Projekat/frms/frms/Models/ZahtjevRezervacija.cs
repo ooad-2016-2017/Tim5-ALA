@@ -9,6 +9,8 @@ namespace frms.Models
 {
     class ZahtjevRezervacija : Zahtjev
     {
+        public new string ID { get; set; }
+
         public Termin ZeljeniTermin { get; set; }
     }
 }

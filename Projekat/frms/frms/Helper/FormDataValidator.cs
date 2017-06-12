@@ -19,6 +19,9 @@ namespace frms.Helper
        
         public static Boolean validacijaKorisnika(String ime, String prezime)
         {
+            if (ime == null) return false;
+            if (prezime == null) return false;
+
             if (Regex.IsMatch(ime, @"^[a-zA-Z]+$") && Regex.IsMatch(prezime, @"^[a-zA-Z]+$"))
                 return true;
             return false;          

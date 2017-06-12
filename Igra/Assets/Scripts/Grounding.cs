@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Grounding : MonoBehaviour {
+public class Grounding : IGrounding {
     public float distance = 0.25f;
 
-    public bool Grounded
+    public override bool Grounded
     {
         get { return gndCnt > 0; }
     }

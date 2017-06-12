@@ -5,8 +5,12 @@
     xmlns:local="using:frms.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:frms.ViewModels"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <viewModels:KorisnikInputViewModel x:Name="Context"/>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Orientation="Vertical" Margin=" 20, 50,20,50">
@@ -17,7 +21,7 @@
                             Width="100"/>
                     <TextBox x:Name="ImeKorisnika"
                             Width="150"
-                            Margin="5,0,0,0"/>
+                            Margin="5,0,0,0" Text="{Binding Korisnik.Ime, Mode=TwoWay}"/>
                     <TextBlock x:Name="errorContent" Foreground="Red"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10 ">
@@ -25,33 +29,33 @@
                             Width="100"/>
                     <TextBox x:Name="PrezimeKorisnika"
                             Width="150"
-                            Margin="5,0,0,0"/>
+                            Margin="5,0,0,0" Text="{Binding Korisnik.Prezime, Mode=TwoWay}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10 ">
                     <TextBlock Text="Korisnicko Ime: "
                             Width="100"/>
                     <TextBox x:Name="UsernameKorisnika"
                             Width="150"
-                            Margin="5,0,0,0"/>
+                            Margin="5,0,0,0" Text="{Binding Korisnik.Username, Mode=TwoWay}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10 ">
                     <TextBlock Text="Password: "
                             Width="100"/>
                     <TextBox x:Name="PasswordKorisnika"
                             Width="150"
-                            Margin="5,0,0,0"/>
+                            Margin="5,0,0,0" Text="{Binding Korisnik.PasswordHash, Mode=TwoWay}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10 ">
                     <TextBlock Text="Admin "
                             Width="100"/>
                     <CheckBox x:Name="tipKorisnika"
-                            Margin="5,0,0,0"/>
+                            Margin="5,0,0,0" IsChecked="{Binding isAdmin, Mode=TwoWay}"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10 ">
                 <StackPanel Orientation="Horizontal" Margin="20">
                     <Button x:Name="odustaniButton" Content="Odustani" Margin=" 10" Width="100"/>
-                    <Button x:Name="sacuvajButton" Content="Sacuvaj" Margin="10" Width="100"/>
+                    <Button x:Name="sacuvajButton" Content="Sacuvaj" Margin="10" Width="100" Command="{Binding Potvrda}"/>
                 </StackPanel>
             </StackPanel>
 
