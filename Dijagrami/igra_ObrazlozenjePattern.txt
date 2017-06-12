@@ -17,3 +17,10 @@ Iskoristen je i Observer pattern u sklopu samih Unity komponenti pri izradi UIa.
 
 Za meni je u Button komponentama dodan OnClick za pocetak i kraj igre.
 
+
+
+
+Napomena:
+
+IAnimationProvider i IGrounding bi inace trebali biti interfaces, ali zbog nedostatka podrske za interfaces u Unity inspectoru,
+ovi interfaces su ustvari abstraktne klase kao workaround.
